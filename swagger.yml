@@ -1,0 +1,310 @@
+openapi: 3.0.0
+info:
+  title: Ollama API
+  description: API specification for Ollama's model management, text generation, and chat functionalities.
+  version: 1.0.0
+servers:
+  - url: http://localhost:11434
+    description: Local API server
+
+paths:
+  /api/generate:
+    post:
+      summary: Generate a text completion
+      description: Generates a response based on a provided prompt.
+      operationId: generateCompletion
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompletionRequest'
+      responses:
+        '200':
+          description: Generated text completion
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompletionResponse'
+
+  /api/chat:
+    post:
+      summary: Chat interaction
+      description: Generates a response in a conversation using chat history.
+      operationId: chat
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatRequest'
+      responses:
+        '200':
+          description: Chat response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatResponse'
+
+  /api/tags:
+    get:
+      summary: List available structures
+      description: Retrieves the locally available structures.
+      operationId: listModels
+      responses:
+        '200':
+          description: List of available structures
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelListResponse'
+
+  /api/show:
+    post:
+      summary: Retrieve model details
+      description: Fetches detailed information about a specific model.
+      operationId: showModel
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ShowModelRequest'
+      responses:
+        '200':
+          description: Model information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShowModelResponse'
+
+  /api/create:
+    post:
+      summary: Create a new model
+      description: Creates a new model in the system.
+      operationId: createModel
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModelManagementRequest'
+      responses:
+        '200':
+          description: Model successfully created
+
+  /api/delete:
+    delete:
+      summary: Delete a model
+      description: Removes a model from the system.
+      operationId: deleteModel
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                model:
+                  type: string
+                  description: Name of the model to delete.
+      responses:
+        '200':
+          description: Model deleted successfully
+
+  /api/process:
+    get:
+      summary: Get model processing information
+      description: Retrieves details of currently running structures.
+      operationId: getProcessingInfo
+      responses:
+        '200':
+          description: Running model details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelProcessResponse'
+
+  /api/version:
+    get:
+      summary: Get API version
+      description: Retrieves the current version of the API.
+      operationId: getVersion
+      responses:
+        '200':
+          description: API version
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VersionResponse'
+
+components:
+  schemas:
+    CompletionRequest:
+      type: object
+      properties:
+        model:
+          type: string
+          description: Model name.
+        prompt:
+          type: string
+          description: Text input for completion.
+        format:
+          type: string
+          description: Format of the response (e.g., "json").
+        options:
+          type: object
+          additionalProperties: true
+          description: Additional model parameters.
+        stream:
+          type: boolean
+          description: Enable streaming response.
+        raw:
+          type: boolean
+          description: Bypass templating system.
+        keep_alive:
+          type: string
+          description: Keep model in memory.
+
+    CompletionResponse:
+      type: object
+      properties:
+        model:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        response:
+          type: string
+          description: Generated output.
+        done:
+          type: boolean
+        total_duration:
+          type: integer
+        load_duration:
+          type: integer
+        prompt_eval_count:
+          type: integer
+        prompt_eval_duration:
+          type: integer
+        eval_count:
+          type: integer
+        eval_duration:
+          type: integer
+
+    ChatRequest:
+      type: object
+      properties:
+        model:
+          type: string
+          description: Model name.
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/Message'
+        format:
+          type: string
+        options:
+          type: object
+          additionalProperties: true
+        stream:
+          type: boolean
+
+    ChatResponse:
+      type: object
+      properties:
+        model:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        message:
+          $ref: '#/components/schemas/Message'
+        done:
+          type: boolean
+
+    Message:
+      type: object
+      properties:
+        role:
+          type: string
+          enum: [ "system", "user", "assistant" ]
+        content:
+          type: string
+        images:
+          type: array
+          items:
+            type: string
+            format: base64
+
+    ModelListResponse:
+      type: object
+      properties:
+        models:
+          type: array
+          items:
+            $ref: '#/components/schemas/ModelInfo'
+
+    ModelInfo:
+      type: object
+      properties:
+        name:
+          type: string
+        modified_at:
+          type: string
+          format: date-time
+        size:
+          type: integer
+        digest:
+          type: string
+
+    ShowModelRequest:
+      type: object
+      properties:
+        model:
+          type: string
+
+    ShowModelResponse:
+      type: object
+      properties:
+        name:
+          type: string
+        version:
+          type: string
+        description:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+
+    ModelManagementRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        details:
+          type: object
+
+    ModelProcessResponse:
+      type: object
+      properties:
+        models:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              model:
+                type: string
+              size:
+                type: integer
+              digest:
+                type: string
+
+    VersionResponse:
+      type: object
+      properties:
+        version:
+          type: string

@@ -1,0 +1,289 @@
+---
+version: 1
+interactions:
+    - request:
+        body: ""
+        form: {}
+        headers:
+            Content-Type:
+                - application/json
+        url: http://localhost:11434/api/tags
+        method: GET
+      response:
+        body: '{"structures":[{"name":"deepseek-coder:6.7B","model":"deepseek-coder:6.7B","modified_at":"2025-02-11T23:35:01.847121821+01:00","size":3827834503,"digest":"ce298d984115b93bb1b191b47fee6b39e4e9fbd5f18e651c02f9fa74e0edcd13","details":{"parent_model":"","format":"gguf","family":"llama","families":["llama"],"parameter_size":"7B","quantization_level":"Q4_0"}},{"name":"llama3.1:latest","model":"llama3.1:latest","modified_at":"2025-01-17T18:58:49.06428696+01:00","size":4920753328,"digest":"46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e","details":{"parent_model":"","format":"gguf","family":"llama","families":["llama"],"parameter_size":"8.0B","quantization_level":"Q4_K_M"}}]}'
+        headers:
+            Content-Length:
+                - "689"
+            Content-Type:
+                - application/json; charset=utf-8
+            Date:
+                - Mon, 17 Feb 2025 00:41:33 GMT
+        status: 200 OK
+        code: 200
+        duration: 8.249208ms
+    - request:
+        body: '{"model":"smollm:135m"}'
+        form: {}
+        headers:
+            Content-Type:
+                - application/json
+        url: http://localhost:11434/api/pull
+        method: POST
+      response:
+        body: |
+            {"status":"pulling manifest"}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":64019}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":487424}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":925696}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":1777664}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":2539520}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":3162112}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":4014080}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":4521984}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":5423104}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":5914624}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":6668288}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":7270400}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":8024064}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":8654848}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":9359360}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":10027008}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":10797056}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":11370496}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":12271616}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":12730368}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":13615104}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":14106624}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":14991360}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":15450112}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":16375808}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":16867328}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":17735680}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":18210816}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":19095552}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":19570688}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":20488192}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":20946944}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":21843968}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":22319104}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":23236608}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":23678976}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":24592384}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":25051136}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":25935872}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":26406912}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":27340800}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":27783168}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":28700672}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":29200384}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":30052352}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":30543872}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":31444992}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":31903744}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":32821248}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":33280000}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":34181120}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":34820096}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":35557376}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":36253696}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":36925440}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":37613568}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":38318080}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":38973440}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":39677952}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":40267776}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":41037824}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":41537536}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":42422272}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":42848256}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":43765760}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":44437504}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":45158400}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":45846528}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":46546944}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":47235072}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":47742976}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":48562176}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":49278976}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":49983488}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":50651136}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":51343360}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":52031488}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":52719616}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":53211136}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":54067200}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":54767616}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":55406592}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":56143872}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":56832000}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":57520128}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":58126336}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":58896384}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":59416576}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":60284928}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":60727296}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":61657088}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":62050304}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":63004672}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":63479808}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":64200704}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":64856064}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":65757184}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":66195456}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":67129344}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":67588096}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":68505600}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":68947968}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":69877760}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":70336512}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":71053312}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":71872512}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":72429568}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":73314304}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":74002432}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":74444800}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":75182080}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":75960320}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":76517376}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":77385728}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":77881344}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":78753792}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":79245312}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":80130048}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":80625664}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":81494016}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":81969152}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":82722816}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":83329024}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":84213760}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":84721664}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":85606400}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":86097920}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":86970368}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":87461888}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":88342528}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":88850432}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":89694208}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":90218496}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":90906624}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":91643904}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":91727296}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":91727296}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":91727296}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":91727296}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":91727296}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":91727296}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":91727296}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":91727296}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":91727296}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":91727296}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":91727296}
+            {"status":"pulling eb2c714d40d4","digest":"sha256:eb2c714d40d4b35ba4b8ee98475a06d51d8080a17d2d2a75a23665985c739b94","total":91727296,"completed":91727296}
+            {"status":"pulling 62fbfd9ed093","digest":"sha256:62fbfd9ed093d6e5ac83190c86eec5369317919f4b149598d2dbb38900e9faef","total":182}
+            {"status":"pulling 62fbfd9ed093","digest":"sha256:62fbfd9ed093d6e5ac83190c86eec5369317919f4b149598d2dbb38900e9faef","total":182}
+            {"status":"pulling 62fbfd9ed093","digest":"sha256:62fbfd9ed093d6e5ac83190c86eec5369317919f4b149598d2dbb38900e9faef","total":182}
+            {"status":"pulling 62fbfd9ed093","digest":"sha256:62fbfd9ed093d6e5ac83190c86eec5369317919f4b149598d2dbb38900e9faef","total":182}
+            {"status":"pulling 62fbfd9ed093","digest":"sha256:62fbfd9ed093d6e5ac83190c86eec5369317919f4b149598d2dbb38900e9faef","total":182,"completed":182}
+            {"status":"pulling 62fbfd9ed093","digest":"sha256:62fbfd9ed093d6e5ac83190c86eec5369317919f4b149598d2dbb38900e9faef","total":182,"completed":182}
+            {"status":"pulling 62fbfd9ed093","digest":"sha256:62fbfd9ed093d6e5ac83190c86eec5369317919f4b149598d2dbb38900e9faef","total":182,"completed":182}
+            {"status":"pulling 62fbfd9ed093","digest":"sha256:62fbfd9ed093d6e5ac83190c86eec5369317919f4b149598d2dbb38900e9faef","total":182,"completed":182}
+            {"status":"pulling 62fbfd9ed093","digest":"sha256:62fbfd9ed093d6e5ac83190c86eec5369317919f4b149598d2dbb38900e9faef","total":182,"completed":182}
+            {"status":"pulling 62fbfd9ed093","digest":"sha256:62fbfd9ed093d6e5ac83190c86eec5369317919f4b149598d2dbb38900e9faef","total":182,"completed":182}
+            {"status":"pulling 62fbfd9ed093","digest":"sha256:62fbfd9ed093d6e5ac83190c86eec5369317919f4b149598d2dbb38900e9faef","total":182,"completed":182}
+            {"status":"pulling 62fbfd9ed093","digest":"sha256:62fbfd9ed093d6e5ac83190c86eec5369317919f4b149598d2dbb38900e9faef","total":182,"completed":182}
+            {"status":"pulling 62fbfd9ed093","digest":"sha256:62fbfd9ed093d6e5ac83190c86eec5369317919f4b149598d2dbb38900e9faef","total":182,"completed":182}
+            {"status":"pulling 62fbfd9ed093","digest":"sha256:62fbfd9ed093d6e5ac83190c86eec5369317919f4b149598d2dbb38900e9faef","total":182,"completed":182}
+            {"status":"pulling 62fbfd9ed093","digest":"sha256:62fbfd9ed093d6e5ac83190c86eec5369317919f4b149598d2dbb38900e9faef","total":182,"completed":182}
+            {"status":"pulling 62fbfd9ed093","digest":"sha256:62fbfd9ed093d6e5ac83190c86eec5369317919f4b149598d2dbb38900e9faef","total":182,"completed":182}
+            {"status":"pulling 62fbfd9ed093","digest":"sha256:62fbfd9ed093d6e5ac83190c86eec5369317919f4b149598d2dbb38900e9faef","total":182,"completed":182}
+            {"status":"pulling 62fbfd9ed093","digest":"sha256:62fbfd9ed093d6e5ac83190c86eec5369317919f4b149598d2dbb38900e9faef","total":182,"completed":182}
+            {"status":"pulling cfc7749b96f6","digest":"sha256:cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30","total":11358}
+            {"status":"pulling cfc7749b96f6","digest":"sha256:cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30","total":11358}
+            {"status":"pulling cfc7749b96f6","digest":"sha256:cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30","total":11358}
+            {"status":"pulling cfc7749b96f6","digest":"sha256:cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30","total":11358}
+            {"status":"pulling cfc7749b96f6","digest":"sha256:cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30","total":11358,"completed":11358}
+            {"status":"pulling cfc7749b96f6","digest":"sha256:cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30","total":11358,"completed":11358}
+            {"status":"pulling cfc7749b96f6","digest":"sha256:cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30","total":11358,"completed":11358}
+            {"status":"pulling cfc7749b96f6","digest":"sha256:cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30","total":11358,"completed":11358}
+            {"status":"pulling cfc7749b96f6","digest":"sha256:cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30","total":11358,"completed":11358}
+            {"status":"pulling cfc7749b96f6","digest":"sha256:cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30","total":11358,"completed":11358}
+            {"status":"pulling cfc7749b96f6","digest":"sha256:cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30","total":11358,"completed":11358}
+            {"status":"pulling cfc7749b96f6","digest":"sha256:cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30","total":11358,"completed":11358}
+            {"status":"pulling cfc7749b96f6","digest":"sha256:cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30","total":11358,"completed":11358}
+            {"status":"pulling cfc7749b96f6","digest":"sha256:cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30","total":11358,"completed":11358}
+            {"status":"pulling cfc7749b96f6","digest":"sha256:cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30","total":11358,"completed":11358}
+            {"status":"pulling cfc7749b96f6","digest":"sha256:cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30","total":11358,"completed":11358}
+            {"status":"pulling cfc7749b96f6","digest":"sha256:cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30","total":11358,"completed":11358}
+            {"status":"pulling cfc7749b96f6","digest":"sha256:cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30","total":11358,"completed":11358}
+            {"status":"pulling ca7a9654b546","digest":"sha256:ca7a9654b5469dc2d638456f31a51a03367987c54135c089165752d9eeb08cd7","total":89}
+            {"status":"pulling ca7a9654b546","digest":"sha256:ca7a9654b5469dc2d638456f31a51a03367987c54135c089165752d9eeb08cd7","total":89}
+            {"status":"pulling ca7a9654b546","digest":"sha256:ca7a9654b5469dc2d638456f31a51a03367987c54135c089165752d9eeb08cd7","total":89}
+            {"status":"pulling ca7a9654b546","digest":"sha256:ca7a9654b5469dc2d638456f31a51a03367987c54135c089165752d9eeb08cd7","total":89}
+            {"status":"pulling ca7a9654b546","digest":"sha256:ca7a9654b5469dc2d638456f31a51a03367987c54135c089165752d9eeb08cd7","total":89,"completed":89}
+            {"status":"pulling ca7a9654b546","digest":"sha256:ca7a9654b5469dc2d638456f31a51a03367987c54135c089165752d9eeb08cd7","total":89,"completed":89}
+            {"status":"pulling ca7a9654b546","digest":"sha256:ca7a9654b5469dc2d638456f31a51a03367987c54135c089165752d9eeb08cd7","total":89,"completed":89}
+            {"status":"pulling ca7a9654b546","digest":"sha256:ca7a9654b5469dc2d638456f31a51a03367987c54135c089165752d9eeb08cd7","total":89,"completed":89}
+            {"status":"pulling ca7a9654b546","digest":"sha256:ca7a9654b5469dc2d638456f31a51a03367987c54135c089165752d9eeb08cd7","total":89,"completed":89}
+            {"status":"pulling ca7a9654b546","digest":"sha256:ca7a9654b5469dc2d638456f31a51a03367987c54135c089165752d9eeb08cd7","total":89,"completed":89}
+            {"status":"pulling ca7a9654b546","digest":"sha256:ca7a9654b5469dc2d638456f31a51a03367987c54135c089165752d9eeb08cd7","total":89,"completed":89}
+            {"status":"pulling ca7a9654b546","digest":"sha256:ca7a9654b5469dc2d638456f31a51a03367987c54135c089165752d9eeb08cd7","total":89,"completed":89}
+            {"status":"pulling ca7a9654b546","digest":"sha256:ca7a9654b5469dc2d638456f31a51a03367987c54135c089165752d9eeb08cd7","total":89,"completed":89}
+            {"status":"pulling ca7a9654b546","digest":"sha256:ca7a9654b5469dc2d638456f31a51a03367987c54135c089165752d9eeb08cd7","total":89,"completed":89}
+            {"status":"pulling ca7a9654b546","digest":"sha256:ca7a9654b5469dc2d638456f31a51a03367987c54135c089165752d9eeb08cd7","total":89,"completed":89}
+            {"status":"pulling ca7a9654b546","digest":"sha256:ca7a9654b5469dc2d638456f31a51a03367987c54135c089165752d9eeb08cd7","total":89,"completed":89}
+            {"status":"pulling ca7a9654b546","digest":"sha256:ca7a9654b5469dc2d638456f31a51a03367987c54135c089165752d9eeb08cd7","total":89,"completed":89}
+            {"status":"pulling ca7a9654b546","digest":"sha256:ca7a9654b5469dc2d638456f31a51a03367987c54135c089165752d9eeb08cd7","total":89,"completed":89}
+            {"status":"pulling f590523c855b","digest":"sha256:f590523c855b7d0f2741a9e076d4b663b1f128f2617b7fcd3fe7d7b57ce71d83","total":488}
+            {"status":"pulling f590523c855b","digest":"sha256:f590523c855b7d0f2741a9e076d4b663b1f128f2617b7fcd3fe7d7b57ce71d83","total":488}
+            {"status":"pulling f590523c855b","digest":"sha256:f590523c855b7d0f2741a9e076d4b663b1f128f2617b7fcd3fe7d7b57ce71d83","total":488}
+            {"status":"pulling f590523c855b","digest":"sha256:f590523c855b7d0f2741a9e076d4b663b1f128f2617b7fcd3fe7d7b57ce71d83","total":488}
+            {"status":"pulling f590523c855b","digest":"sha256:f590523c855b7d0f2741a9e076d4b663b1f128f2617b7fcd3fe7d7b57ce71d83","total":488,"completed":488}
+            {"status":"pulling f590523c855b","digest":"sha256:f590523c855b7d0f2741a9e076d4b663b1f128f2617b7fcd3fe7d7b57ce71d83","total":488,"completed":488}
+            {"status":"pulling f590523c855b","digest":"sha256:f590523c855b7d0f2741a9e076d4b663b1f128f2617b7fcd3fe7d7b57ce71d83","total":488,"completed":488}
+            {"status":"pulling f590523c855b","digest":"sha256:f590523c855b7d0f2741a9e076d4b663b1f128f2617b7fcd3fe7d7b57ce71d83","total":488,"completed":488}
+            {"status":"pulling f590523c855b","digest":"sha256:f590523c855b7d0f2741a9e076d4b663b1f128f2617b7fcd3fe7d7b57ce71d83","total":488,"completed":488}
+            {"status":"pulling f590523c855b","digest":"sha256:f590523c855b7d0f2741a9e076d4b663b1f128f2617b7fcd3fe7d7b57ce71d83","total":488,"completed":488}
+            {"status":"pulling f590523c855b","digest":"sha256:f590523c855b7d0f2741a9e076d4b663b1f128f2617b7fcd3fe7d7b57ce71d83","total":488,"completed":488}
+            {"status":"pulling f590523c855b","digest":"sha256:f590523c855b7d0f2741a9e076d4b663b1f128f2617b7fcd3fe7d7b57ce71d83","total":488,"completed":488}
+            {"status":"pulling f590523c855b","digest":"sha256:f590523c855b7d0f2741a9e076d4b663b1f128f2617b7fcd3fe7d7b57ce71d83","total":488,"completed":488}
+            {"status":"pulling f590523c855b","digest":"sha256:f590523c855b7d0f2741a9e076d4b663b1f128f2617b7fcd3fe7d7b57ce71d83","total":488,"completed":488}
+            {"status":"pulling f590523c855b","digest":"sha256:f590523c855b7d0f2741a9e076d4b663b1f128f2617b7fcd3fe7d7b57ce71d83","total":488,"completed":488}
+            {"status":"pulling f590523c855b","digest":"sha256:f590523c855b7d0f2741a9e076d4b663b1f128f2617b7fcd3fe7d7b57ce71d83","total":488,"completed":488}
+            {"status":"pulling f590523c855b","digest":"sha256:f590523c855b7d0f2741a9e076d4b663b1f128f2617b7fcd3fe7d7b57ce71d83","total":488,"completed":488}
+            {"status":"pulling f590523c855b","digest":"sha256:f590523c855b7d0f2741a9e076d4b663b1f128f2617b7fcd3fe7d7b57ce71d83","total":488,"completed":488}
+            {"status":"verifying sha256 digest"}
+            {"status":"writing manifest"}
+            {"status":"success"}
+        headers:
+            Content-Type:
+                - application/x-ndjson
+            Date:
+                - Mon, 17 Feb 2025 00:41:33 GMT
+        status: 200 OK
+        code: 200
+        duration: 1.089959ms
+    - request:
+        body: ""
+        form: {}
+        headers:
+            Content-Type:
+                - application/json
+        url: http://localhost:11434/api/tags
+        method: GET
+      response:
+        body: '{"structures":[{"name":"smollm:135m","model":"smollm:135m","modified_at":"2025-02-17T01:41:48.406591217+01:00","size":91739413,"digest":"b0b2a46174385c0adcaa77ff245ffeced5fc4a61447b6f221b2beb5c5a760133","details":{"parent_model":"","format":"gguf","family":"llama","families":["llama"],"parameter_size":"134.52M","quantization_level":"Q4_0"}},{"name":"deepseek-coder:6.7B","model":"deepseek-coder:6.7B","modified_at":"2025-02-11T23:35:01.847121821+01:00","size":3827834503,"digest":"ce298d984115b93bb1b191b47fee6b39e4e9fbd5f18e651c02f9fa74e0edcd13","details":{"parent_model":"","format":"gguf","family":"llama","families":["llama"],"parameter_size":"7B","quantization_level":"Q4_0"}},{"name":"llama3.1:latest","model":"llama3.1:latest","modified_at":"2025-01-17T18:58:49.06428696+01:00","size":4920753328,"digest":"46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e","details":{"parent_model":"","format":"gguf","family":"llama","families":["llama"],"parameter_size":"8.0B","quantization_level":"Q4_K_M"}}]}'
+        headers:
+            Content-Length:
+                - "1017"
+            Content-Type:
+                - application/json; charset=utf-8
+            Date:
+                - Mon, 17 Feb 2025 00:48:07 GMT
+        status: 200 OK
+        code: 200
+        duration: 9.944292ms

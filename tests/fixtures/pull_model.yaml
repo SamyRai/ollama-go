@@ -1,0 +1,23 @@
+---
+version: 1
+interactions:
+    - request:
+        body: '{"model":"test-model"}'
+        form: {}
+        headers:
+            Content-Type:
+                - application/json
+        url: http://localhost:11434/api/pull
+        method: POST
+      response:
+        body: |
+            {"status":"pulling manifest"}
+            {"error":"pull model manifest: file does not exist"}
+        headers:
+            Content-Type:
+                - application/x-ndjson
+            Date:
+                - Mon, 17 Feb 2025 18:33:45 GMT
+        status: 200 OK
+        code: 200
+        duration: 1.14225ms

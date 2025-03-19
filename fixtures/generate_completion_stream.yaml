@@ -1,0 +1,29 @@
+---
+version: 1
+interactions:
+    - request:
+        body: '{"model":"llama3.1","prompt":"Say hello","stream":true}'
+        form: {}
+        headers:
+            Content-Type:
+                - application/json
+        url: http://localhost:11434/api/generate
+        method: POST
+      response:
+        body: |
+            {"model":"llama3.1","created_at":"2025-02-17T01:31:13.621513Z","response":"Hello","done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T01:31:13.682706Z","response":"!","done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T01:31:13.742211Z","response":" How","done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T01:31:13.80927Z","response":" are","done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T01:31:13.870547Z","response":" you","done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T01:31:13.931472Z","response":" today","done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T01:31:13.991124Z","response":"?","done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T01:31:14.050842Z","response":"","done":true,"done_reason":"stop","context":[128006,882,128007,271,46864,24748,128009,128006,78191,128007,271,9906,0,2650,527,499,3432,30],"total_duration":682070375,"load_duration":29236833,"prompt_eval_count":12,"prompt_eval_duration":222000000,"eval_count":8,"eval_duration":430000000}
+        headers:
+            Content-Type:
+                - application/x-ndjson
+            Date:
+                - Mon, 17 Feb 2025 01:31:13 GMT
+        status: 200 OK
+        code: 200
+        duration: 253.187833ms
