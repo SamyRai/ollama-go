@@ -1,7 +1,7 @@
 package client
 
 import (
-	"hrelay/core/llm/ollama/structures"
+	"github.com/SamyRai/ollama-go/structures"
 )
 
 // GetVersion retrieves the current API version.

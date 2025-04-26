@@ -2,7 +2,7 @@ package tools
 
 import (
 	"errors"
-	"hrelay/core/llm/ollama/structures"
+	"github.com/SamyRai/ollama-go/structures"
 	"sync"
 )
 

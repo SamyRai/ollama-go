@@ -2,10 +2,10 @@ package tests
 
 import (
 	"errors"
+	"github.com/SamyRai/ollama-go/structures"
+	"github.com/SamyRai/ollama-go/tools"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"hrelay/core/llm/ollama/structures"
-	"hrelay/core/llm/ollama/tools"
 	"testing"
 )
 

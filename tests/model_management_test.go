@@ -1,11 +1,11 @@
 package tests
 
 import (
+	"github.com/SamyRai/ollama-go/client"
+	"github.com/SamyRai/ollama-go/config"
+	"github.com/SamyRai/ollama-go/structures"
 	"github.com/stretchr/testify/require"
 	"gopkg.in/dnaeon/go-vcr.v2/recorder"
-	"hrelay/core/llm/ollama/client"
-	"hrelay/core/llm/ollama/config"
-	"hrelay/core/llm/ollama/structures"
 	"testing"
 )
 

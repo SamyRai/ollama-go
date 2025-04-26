@@ -1,7 +1,7 @@
 package client
 
 import (
-	"hrelay/core/llm/ollama/structures"
+	"github.com/SamyRai/ollama-go/structures"
 )
 
 // ListModels retrieves all available models.

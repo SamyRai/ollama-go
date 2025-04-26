@@ -1,7 +1,7 @@
 package client
 
 import (
-	"hrelay/core/llm/ollama/structures"
+	"github.com/SamyRai/ollama-go/structures"
 )
 
 // CreateModel sends a request to create a new model.

@@ -1,4 +1,4 @@
-module gOllama
+module github.com/SamyRai/ollama-go
 
 go 1.24
 

@@ -5,7 +5,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"errors"
-	"hrelay/core/llm/ollama/config"
+	"github.com/SamyRai/ollama-go/config"
 	"io"
 	"net/http"
 )

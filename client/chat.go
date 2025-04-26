@@ -2,7 +2,7 @@ package client
 
 import (
 	"encoding/json"
-	"hrelay/core/llm/ollama/structures"
+	"github.com/SamyRai/ollama-go/structures"
 )
 
 // Chat handles both streaming and non-streaming chat interactions.
