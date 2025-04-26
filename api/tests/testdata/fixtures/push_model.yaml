@@ -1,0 +1,24 @@
+---
+version: 1
+interactions:
+    - request:
+        body: '{"model":"llama3:latest"}'
+        form: {}
+        headers:
+            Content-Type:
+                - application/json
+        url: http://localhost:11434/api/push
+        method: POST
+      response:
+        body: |
+            {"status":"retrieving manifest"}
+            {"status":"couldn't retrieve manifest"}
+            {"error":"open /Users/damirmukimov/.ollama/models/manifests/registry.ollama.ai/library/llama3/latest: no such file or directory"}
+        headers:
+            Content-Type:
+                - application/x-ndjson
+            Date:
+                - Sat, 26 Apr 2025 08:05:11 GMT
+        status: 200 OK
+        code: 200
+        duration: 59.659458ms

@@ -1,0 +1,23 @@
+---
+version: 1
+interactions:
+    - request:
+        body: ""
+        form: {}
+        headers:
+            Content-Type:
+                - application/json
+        url: http://localhost:11434/api/ps
+        method: GET
+      response:
+        body: '{"models":[{"name":"llama3.1:latest","model":"llama3.1:latest","size":6987704320,"digest":"46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e","details":{"parent_model":"","format":"gguf","family":"llama","families":["llama"],"parameter_size":"8.0B","quantization_level":"Q4_K_M"},"expires_at":"2025-04-26T10:10:11.178525+02:00","size_vram":6987704320}]}'
+        headers:
+            Content-Length:
+                - "368"
+            Content-Type:
+                - application/json; charset=utf-8
+            Date:
+                - Sat, 26 Apr 2025 08:05:11 GMT
+        status: 200 OK
+        code: 200
+        duration: 4.467083ms

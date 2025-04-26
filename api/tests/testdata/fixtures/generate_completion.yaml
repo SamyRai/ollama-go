@@ -1,0 +1,83 @@
+---
+version: 1
+interactions:
+    - request:
+        body: '{"model":"llama3","prompt":"Once upon a time","options":{}}'
+        form: {}
+        headers:
+            Content-Type:
+                - application/json
+        url: http://localhost:11434/api/generate
+        method: POST
+      response:
+        body: '{"error":"model ''llama3'' not found"}'
+        headers:
+            Content-Length:
+                - "36"
+            Content-Type:
+                - application/json; charset=utf-8
+            Date:
+                - Sat, 26 Apr 2025 08:04:41 GMT
+        status: 404 Not Found
+        code: 404
+        duration: 975.167µs
+    - request:
+        body: '{"model":"llama3","prompt":"Once upon a time","options":{"temperature":0.7}}'
+        form: {}
+        headers:
+            Content-Type:
+                - application/json
+        url: http://localhost:11434/api/generate
+        method: POST
+      response:
+        body: '{"error":"model ''llama3'' not found"}'
+        headers:
+            Content-Length:
+                - "36"
+            Content-Type:
+                - application/json; charset=utf-8
+            Date:
+                - Sat, 26 Apr 2025 08:04:41 GMT
+        status: 404 Not Found
+        code: 404
+        duration: 5.495875ms
+    - request:
+        body: '{"model":"llama3","prompt":"Once upon a time","suffix":" in a land far away.","options":{}}'
+        form: {}
+        headers:
+            Content-Type:
+                - application/json
+        url: http://localhost:11434/api/generate
+        method: POST
+      response:
+        body: '{"error":"model ''llama3'' not found"}'
+        headers:
+            Content-Length:
+                - "36"
+            Content-Type:
+                - application/json; charset=utf-8
+            Date:
+                - Sat, 26 Apr 2025 08:04:41 GMT
+        status: 404 Not Found
+        code: 404
+        duration: 2.027125ms
+    - request:
+        body: '{"model":"llama3","prompt":"List 5 benefits of AI:","options":{"temperature":0.7,"top_p":0.9,"top_k":40}}'
+        form: {}
+        headers:
+            Content-Type:
+                - application/json
+        url: http://localhost:11434/api/generate
+        method: POST
+      response:
+        body: '{"error":"model ''llama3'' not found"}'
+        headers:
+            Content-Length:
+                - "36"
+            Content-Type:
+                - application/json; charset=utf-8
+            Date:
+                - Sat, 26 Apr 2025 08:04:41 GMT
+        status: 404 Not Found
+        code: 404
+        duration: 1.068291ms

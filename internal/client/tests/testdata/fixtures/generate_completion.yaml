@@ -1,0 +1,47 @@
+---
+version: 1
+interactions:
+    - request:
+        body: '{"model":"llama3.1","prompt":"Once upon a time","options":{}}'
+        form: {}
+        headers:
+            Content-Type:
+                - application/json
+        url: http://localhost:11434/api/generate
+        method: POST
+      response:
+        body: |
+            {"model":"llama3.1","created_at":"2025-04-26T08:05:41.060976Z","response":"...","done":false}
+            {"model":"llama3.1","created_at":"2025-04-26T08:05:41.14069Z","response":"in","done":false}
+            {"model":"llama3.1","created_at":"2025-04-26T08:05:41.212473Z","response":" a","done":false}
+            {"model":"llama3.1","created_at":"2025-04-26T08:05:41.276088Z","response":" far","done":false}
+            {"model":"llama3.1","created_at":"2025-04-26T08:05:41.341508Z","response":"-off","done":false}
+            {"model":"llama3.1","created_at":"2025-04-26T08:05:41.416811Z","response":" kingdom","done":false}
+            {"model":"llama3.1","created_at":"2025-04-26T08:05:41.490051Z","response":",","done":false}
+            {"model":"llama3.1","created_at":"2025-04-26T08:05:41.562986Z","response":" where","done":false}
+            {"model":"llama3.1","created_at":"2025-04-26T08:05:41.632883Z","response":" the","done":false}
+            {"model":"llama3.1","created_at":"2025-04-26T08:05:41.708012Z","response":" sun","done":false}
+            {"model":"llama3.1","created_at":"2025-04-26T08:05:41.781624Z","response":" dipped","done":false}
+            {"model":"llama3.1","created_at":"2025-04-26T08:05:41.854727Z","response":" into","done":false}
+            {"model":"llama3.1","created_at":"2025-04-26T08:05:41.926519Z","response":" the","done":false}
+            {"model":"llama3.1","created_at":"2025-04-26T08:05:41.999648Z","response":" horizon","done":false}
+            {"model":"llama3.1","created_at":"2025-04-26T08:05:42.074782Z","response":" and","done":false}
+            {"model":"llama3.1","created_at":"2025-04-26T08:05:42.146849Z","response":" painted","done":false}
+            {"model":"llama3.1","created_at":"2025-04-26T08:05:42.220947Z","response":" the","done":false}
+            {"model":"llama3.1","created_at":"2025-04-26T08:05:42.292114Z","response":" sky","done":false}
+            {"model":"llama3.1","created_at":"2025-04-26T08:05:42.366889Z","response":" with","done":false}
+            {"model":"llama3.1","created_at":"2025-04-26T08:05:42.440158Z","response":" hues","done":false}
+            {"model":"llama3.1","created_at":"2025-04-26T08:05:42.512843Z","response":" of","done":false}
+            {"model":"llama3.1","created_at":"2025-04-26T08:05:42.584052Z","response":" crimson","done":false}
+            {"model":"llama3.1","created_at":"2025-04-26T08:05:42.657965Z","response":" and","done":false}
+            {"model":"llama3.1","created_at":"2025-04-26T08:05:42.72984Z","response":" gold","done":false}
+            {"model":"llama3.1","created_at":"2025-04-26T08:05:42.795797Z","response":".","done":false}
+            {"model":"llama3.1","created_at":"2025-04-26T08:05:42.873431Z","response":"","done":true,"done_reason":"stop","context":[128006,882,128007,271,12805,5304,264,892,128009,128006,78191,128007,271,1131,258,264,3117,12744,26135,11,1405,279,7160,73307,1139,279,35174,323,24937,279,13180,449,82757,315,97119,323,6761,13],"total_duration":2090889917,"load_duration":36082792,"prompt_eval_count":14,"prompt_eval_duration":239294791,"eval_count":26,"eval_duration":1814582000}
+        headers:
+            Content-Type:
+                - application/x-ndjson
+            Date:
+                - Sat, 26 Apr 2025 08:05:41 GMT
+        status: 200 OK
+        code: 200
+        duration: 278.895958ms

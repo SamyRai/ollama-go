@@ -1,0 +1,359 @@
+---
+version: 1
+interactions:
+    - request:
+        body: '{"model":"llama3.1","messages":[{"role":"user","content":"What is AI?"}],"options":{}}'
+        form: {}
+        headers:
+            Content-Type:
+                - application/json
+        url: http://localhost:11434/api/chat
+        method: POST
+      response:
+        body: |
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:52.394619Z","message":{"role":"assistant","content":"AI"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:52.450019Z","message":{"role":"assistant","content":","},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:52.504611Z","message":{"role":"assistant","content":" or"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:52.559729Z","message":{"role":"assistant","content":" Artificial"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:52.615403Z","message":{"role":"assistant","content":" Intelligence"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:52.671813Z","message":{"role":"assistant","content":","},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:52.726567Z","message":{"role":"assistant","content":" refers"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:52.782846Z","message":{"role":"assistant","content":" to"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:52.83835Z","message":{"role":"assistant","content":" the"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:52.895044Z","message":{"role":"assistant","content":" simulation"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:52.953504Z","message":{"role":"assistant","content":" of"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:53.010391Z","message":{"role":"assistant","content":" human"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:53.067134Z","message":{"role":"assistant","content":" intelligence"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:53.124647Z","message":{"role":"assistant","content":" in"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:53.182067Z","message":{"role":"assistant","content":" machines"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:53.247107Z","message":{"role":"assistant","content":" that"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:53.308371Z","message":{"role":"assistant","content":" are"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:53.381321Z","message":{"role":"assistant","content":" programmed"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:53.447664Z","message":{"role":"assistant","content":" to"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:53.511573Z","message":{"role":"assistant","content":" think"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:53.570842Z","message":{"role":"assistant","content":" and"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:53.645041Z","message":{"role":"assistant","content":" learn"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:53.709397Z","message":{"role":"assistant","content":" like"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:53.776095Z","message":{"role":"assistant","content":" humans"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:53.832356Z","message":{"role":"assistant","content":"."},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:53.887419Z","message":{"role":"assistant","content":" The"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:53.94443Z","message":{"role":"assistant","content":" term"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:53.999564Z","message":{"role":"assistant","content":" can"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:54.063481Z","message":{"role":"assistant","content":" also"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:54.118964Z","message":{"role":"assistant","content":" be"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:54.175186Z","message":{"role":"assistant","content":" applied"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:54.232407Z","message":{"role":"assistant","content":" to"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:54.287524Z","message":{"role":"assistant","content":" any"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:54.343967Z","message":{"role":"assistant","content":" machine"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:54.403675Z","message":{"role":"assistant","content":" that"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:54.464562Z","message":{"role":"assistant","content":" exhibits"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:54.523372Z","message":{"role":"assistant","content":" traits"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:54.582926Z","message":{"role":"assistant","content":" associated"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:54.640615Z","message":{"role":"assistant","content":" with"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:54.697018Z","message":{"role":"assistant","content":" a"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:54.753096Z","message":{"role":"assistant","content":" human"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:54.808206Z","message":{"role":"assistant","content":" mind"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:54.864681Z","message":{"role":"assistant","content":" such"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:54.920417Z","message":{"role":"assistant","content":" as"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:54.975646Z","message":{"role":"assistant","content":" learning"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:55.033197Z","message":{"role":"assistant","content":" and"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:55.088662Z","message":{"role":"assistant","content":" problem"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:55.149254Z","message":{"role":"assistant","content":"-solving"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:55.205346Z","message":{"role":"assistant","content":".\n\n"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:55.265698Z","message":{"role":"assistant","content":"AI"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:55.332132Z","message":{"role":"assistant","content":" technology"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:55.391609Z","message":{"role":"assistant","content":" involves"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:55.451301Z","message":{"role":"assistant","content":" several"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:55.509952Z","message":{"role":"assistant","content":" disciplines"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:55.566082Z","message":{"role":"assistant","content":","},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:55.621707Z","message":{"role":"assistant","content":" including"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:55.678805Z","message":{"role":"assistant","content":" computer"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:55.73498Z","message":{"role":"assistant","content":" science"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:55.792624Z","message":{"role":"assistant","content":","},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:55.847959Z","message":{"role":"assistant","content":" mathematics"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:55.906608Z","message":{"role":"assistant","content":","},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:55.962454Z","message":{"role":"assistant","content":" psychology"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:56.018192Z","message":{"role":"assistant","content":","},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:56.07464Z","message":{"role":"assistant","content":" and"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:56.130585Z","message":{"role":"assistant","content":" engineering"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:56.18704Z","message":{"role":"assistant","content":"."},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:56.242725Z","message":{"role":"assistant","content":" It"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:56.300547Z","message":{"role":"assistant","content":" enables"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:56.359761Z","message":{"role":"assistant","content":" machines"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:56.415656Z","message":{"role":"assistant","content":" to"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:56.471109Z","message":{"role":"assistant","content":" perform"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:56.526788Z","message":{"role":"assistant","content":" tasks"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:56.583555Z","message":{"role":"assistant","content":" that"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:56.639219Z","message":{"role":"assistant","content":" typically"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:56.696018Z","message":{"role":"assistant","content":" require"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:56.752892Z","message":{"role":"assistant","content":" human"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:56.811711Z","message":{"role":"assistant","content":" intelligence"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:56.872466Z","message":{"role":"assistant","content":","},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:56.929821Z","message":{"role":"assistant","content":" such"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:56.985642Z","message":{"role":"assistant","content":" as"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:57.04126Z","message":{"role":"assistant","content":":\n\n"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:57.09914Z","message":{"role":"assistant","content":"1"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:57.155723Z","message":{"role":"assistant","content":"."},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:57.211857Z","message":{"role":"assistant","content":" **"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:57.270855Z","message":{"role":"assistant","content":"Learning"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:57.327757Z","message":{"role":"assistant","content":"**:"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:57.384401Z","message":{"role":"assistant","content":" AI"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:57.439763Z","message":{"role":"assistant","content":" systems"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:57.496011Z","message":{"role":"assistant","content":" can"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:57.552361Z","message":{"role":"assistant","content":" learn"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:57.610769Z","message":{"role":"assistant","content":" from"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:57.671464Z","message":{"role":"assistant","content":" data"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:57.728293Z","message":{"role":"assistant","content":" and"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:57.783693Z","message":{"role":"assistant","content":" improve"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:57.840853Z","message":{"role":"assistant","content":" their"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:57.89717Z","message":{"role":"assistant","content":" performance"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:57.953443Z","message":{"role":"assistant","content":" over"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:58.012027Z","message":{"role":"assistant","content":" time"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:58.068497Z","message":{"role":"assistant","content":".\n"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:58.124719Z","message":{"role":"assistant","content":"2"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:58.180894Z","message":{"role":"assistant","content":"."},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:58.237375Z","message":{"role":"assistant","content":" **"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:58.29631Z","message":{"role":"assistant","content":"Reason"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:58.352932Z","message":{"role":"assistant","content":"ing"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:58.409326Z","message":{"role":"assistant","content":"**:"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:58.468761Z","message":{"role":"assistant","content":" They"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:58.529428Z","message":{"role":"assistant","content":" can"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:58.588159Z","message":{"role":"assistant","content":" make"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:58.648513Z","message":{"role":"assistant","content":" decisions"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:58.705087Z","message":{"role":"assistant","content":" based"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:58.762702Z","message":{"role":"assistant","content":" on"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:58.818561Z","message":{"role":"assistant","content":" the"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:58.874284Z","message":{"role":"assistant","content":" information"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:58.93029Z","message":{"role":"assistant","content":" they"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:58.986099Z","message":{"role":"assistant","content":" have"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:59.042501Z","message":{"role":"assistant","content":" been"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:59.098771Z","message":{"role":"assistant","content":" given"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:59.155054Z","message":{"role":"assistant","content":" or"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:59.214607Z","message":{"role":"assistant","content":" learned"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:59.274305Z","message":{"role":"assistant","content":".\n"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:59.333125Z","message":{"role":"assistant","content":"3"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:59.393481Z","message":{"role":"assistant","content":"."},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:59.452289Z","message":{"role":"assistant","content":" **"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:59.511925Z","message":{"role":"assistant","content":"Problem"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:59.571878Z","message":{"role":"assistant","content":"-solving"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:59.63158Z","message":{"role":"assistant","content":"**:"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:59.690678Z","message":{"role":"assistant","content":" AI"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:59.749682Z","message":{"role":"assistant","content":" can"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:59.808698Z","message":{"role":"assistant","content":" solve"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:59.867915Z","message":{"role":"assistant","content":" complex"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:59.927754Z","message":{"role":"assistant","content":" problems"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:32:59.987468Z","message":{"role":"assistant","content":" more"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:00.048553Z","message":{"role":"assistant","content":" efficiently"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:00.104862Z","message":{"role":"assistant","content":" than"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:00.161812Z","message":{"role":"assistant","content":" humans"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:00.220774Z","message":{"role":"assistant","content":" in"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:00.281536Z","message":{"role":"assistant","content":" many"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:00.342634Z","message":{"role":"assistant","content":" cases"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:00.401594Z","message":{"role":"assistant","content":".\n\n"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:00.458254Z","message":{"role":"assistant","content":"AI"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:00.513885Z","message":{"role":"assistant","content":" applications"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:00.570823Z","message":{"role":"assistant","content":" are"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:00.626243Z","message":{"role":"assistant","content":" vast"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:00.68316Z","message":{"role":"assistant","content":","},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:00.743128Z","message":{"role":"assistant","content":" ranging"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:00.801737Z","message":{"role":"assistant","content":" across"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:00.862772Z","message":{"role":"assistant","content":" industries"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:00.922096Z","message":{"role":"assistant","content":" like"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:00.982286Z","message":{"role":"assistant","content":" healthcare"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:01.043222Z","message":{"role":"assistant","content":" ("},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:01.103203Z","message":{"role":"assistant","content":"di"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:01.163739Z","message":{"role":"assistant","content":"agnosis"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:01.220499Z","message":{"role":"assistant","content":" assistance"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:01.277502Z","message":{"role":"assistant","content":"),"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:01.335212Z","message":{"role":"assistant","content":" finance"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:01.391124Z","message":{"role":"assistant","content":" ("},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:01.447367Z","message":{"role":"assistant","content":"fra"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:01.506919Z","message":{"role":"assistant","content":"ud"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:01.564601Z","message":{"role":"assistant","content":" detection"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:01.621416Z","message":{"role":"assistant","content":" and"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:01.677494Z","message":{"role":"assistant","content":" personalized"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:01.734498Z","message":{"role":"assistant","content":" banking"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:01.79123Z","message":{"role":"assistant","content":" services"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:01.848352Z","message":{"role":"assistant","content":"),"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:01.904057Z","message":{"role":"assistant","content":" transportation"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:01.960522Z","message":{"role":"assistant","content":" ("},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:02.016469Z","message":{"role":"assistant","content":"self"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:02.072758Z","message":{"role":"assistant","content":"-driving"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:02.13152Z","message":{"role":"assistant","content":" cars"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:02.187549Z","message":{"role":"assistant","content":"),"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:02.244623Z","message":{"role":"assistant","content":" customer"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:02.304215Z","message":{"role":"assistant","content":" service"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:02.361115Z","message":{"role":"assistant","content":" ("},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:02.416829Z","message":{"role":"assistant","content":"chat"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:02.47349Z","message":{"role":"assistant","content":"bots"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:02.530153Z","message":{"role":"assistant","content":"),"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:02.58586Z","message":{"role":"assistant","content":" education"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:02.643037Z","message":{"role":"assistant","content":" ("},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:02.698781Z","message":{"role":"assistant","content":"personal"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:02.755811Z","message":{"role":"assistant","content":"ized"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:02.812781Z","message":{"role":"assistant","content":" learning"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:02.869669Z","message":{"role":"assistant","content":" plans"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:02.926431Z","message":{"role":"assistant","content":"),"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:02.982211Z","message":{"role":"assistant","content":" and"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:03.039089Z","message":{"role":"assistant","content":" entertainment"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:03.096674Z","message":{"role":"assistant","content":" ("},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:03.153393Z","message":{"role":"assistant","content":"game"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:03.210657Z","message":{"role":"assistant","content":" development"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:03.268126Z","message":{"role":"assistant","content":")."},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:03.328423Z","message":{"role":"assistant","content":" The"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:03.384713Z","message":{"role":"assistant","content":" primary"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:03.441515Z","message":{"role":"assistant","content":" goals"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:03.498379Z","message":{"role":"assistant","content":" of"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:03.554618Z","message":{"role":"assistant","content":" AI"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:03.615641Z","message":{"role":"assistant","content":" research"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:03.673937Z","message":{"role":"assistant","content":" include"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:03.730167Z","message":{"role":"assistant","content":" creating"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:03.78785Z","message":{"role":"assistant","content":" machines"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:03.849125Z","message":{"role":"assistant","content":" that"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:03.905227Z","message":{"role":"assistant","content":" can"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:03.961449Z","message":{"role":"assistant","content":" understand"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:04.018502Z","message":{"role":"assistant","content":","},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:04.076929Z","message":{"role":"assistant","content":" reason"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:04.135805Z","message":{"role":"assistant","content":","},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:04.193023Z","message":{"role":"assistant","content":" learn"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:04.250214Z","message":{"role":"assistant","content":","},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:04.30837Z","message":{"role":"assistant","content":" and"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:04.364644Z","message":{"role":"assistant","content":" interact"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:04.421777Z","message":{"role":"assistant","content":" with"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:04.477607Z","message":{"role":"assistant","content":" humans"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:04.533365Z","message":{"role":"assistant","content":" in"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:04.589787Z","message":{"role":"assistant","content":" a"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:04.646812Z","message":{"role":"assistant","content":" way"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:04.704606Z","message":{"role":"assistant","content":" that"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:04.760633Z","message":{"role":"assistant","content":" mim"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:04.817843Z","message":{"role":"assistant","content":"ics"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:04.875108Z","message":{"role":"assistant","content":" human"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:04.931461Z","message":{"role":"assistant","content":" intelligence"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:04.988139Z","message":{"role":"assistant","content":".\n\n"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:05.046283Z","message":{"role":"assistant","content":"The"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:05.10445Z","message":{"role":"assistant","content":" development"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:05.160985Z","message":{"role":"assistant","content":" of"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:05.21849Z","message":{"role":"assistant","content":" AI"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:05.275791Z","message":{"role":"assistant","content":" is"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:05.333224Z","message":{"role":"assistant","content":" often"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:05.391371Z","message":{"role":"assistant","content":" categorized"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:05.449932Z","message":{"role":"assistant","content":" into"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:05.507526Z","message":{"role":"assistant","content":" two"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:05.565744Z","message":{"role":"assistant","content":" main"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:05.623759Z","message":{"role":"assistant","content":" types"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:05.683457Z","message":{"role":"assistant","content":" based"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:05.740259Z","message":{"role":"assistant","content":" on"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:05.797579Z","message":{"role":"assistant","content":" the"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:05.854157Z","message":{"role":"assistant","content":" functionality"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:05.911404Z","message":{"role":"assistant","content":" and"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:05.967676Z","message":{"role":"assistant","content":" capabilities"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:06.024929Z","message":{"role":"assistant","content":":\n\n"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:06.085917Z","message":{"role":"assistant","content":"1"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:06.144831Z","message":{"role":"assistant","content":"."},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:06.20078Z","message":{"role":"assistant","content":" **"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:06.258419Z","message":{"role":"assistant","content":"N"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:06.317089Z","message":{"role":"assistant","content":"arrow"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:06.374259Z","message":{"role":"assistant","content":" or"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:06.431016Z","message":{"role":"assistant","content":" Weak"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:06.490059Z","message":{"role":"assistant","content":" AI"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:06.55047Z","message":{"role":"assistant","content":"**:"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:06.609463Z","message":{"role":"assistant","content":" This"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:06.6712Z","message":{"role":"assistant","content":" type"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:06.729938Z","message":{"role":"assistant","content":" of"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:06.790492Z","message":{"role":"assistant","content":" AI"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:06.852182Z","message":{"role":"assistant","content":" focuses"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:06.911896Z","message":{"role":"assistant","content":" on"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:06.968632Z","message":{"role":"assistant","content":" a"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:07.026217Z","message":{"role":"assistant","content":" specific"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:07.083837Z","message":{"role":"assistant","content":" task"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:07.1416Z","message":{"role":"assistant","content":" such"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:07.202856Z","message":{"role":"assistant","content":" as"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:07.264802Z","message":{"role":"assistant","content":" facial"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:07.324037Z","message":{"role":"assistant","content":" recognition"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:07.382221Z","message":{"role":"assistant","content":","},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:07.439218Z","message":{"role":"assistant","content":" speech"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:07.497202Z","message":{"role":"assistant","content":" recognition"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:07.558813Z","message":{"role":"assistant","content":","},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:07.628056Z","message":{"role":"assistant","content":" or"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:07.690429Z","message":{"role":"assistant","content":" game"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:07.747028Z","message":{"role":"assistant","content":" playing"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:07.803799Z","message":{"role":"assistant","content":" ("},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:07.862056Z","message":{"role":"assistant","content":"e"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:07.92036Z","message":{"role":"assistant","content":".g"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:07.976779Z","message":{"role":"assistant","content":".,"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:08.03872Z","message":{"role":"assistant","content":" chess"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:08.097152Z","message":{"role":"assistant","content":").\n"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:08.156999Z","message":{"role":"assistant","content":"2"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:08.219897Z","message":{"role":"assistant","content":"."},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:08.282983Z","message":{"role":"assistant","content":" **"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:08.343059Z","message":{"role":"assistant","content":"General"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:08.401984Z","message":{"role":"assistant","content":" or"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:08.461763Z","message":{"role":"assistant","content":" Strong"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:08.519771Z","message":{"role":"assistant","content":" AI"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:08.576846Z","message":{"role":"assistant","content":"**:"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:08.635792Z","message":{"role":"assistant","content":" The"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:08.694181Z","message":{"role":"assistant","content":"oretical"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:08.751294Z","message":{"role":"assistant","content":" AI"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:08.809099Z","message":{"role":"assistant","content":" that"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:08.866387Z","message":{"role":"assistant","content":" would"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:08.924885Z","message":{"role":"assistant","content":" have"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:08.98149Z","message":{"role":"assistant","content":" the"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:09.03902Z","message":{"role":"assistant","content":" ability"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:09.09849Z","message":{"role":"assistant","content":" to"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:09.155966Z","message":{"role":"assistant","content":" understand"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:09.215336Z","message":{"role":"assistant","content":","},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:09.274723Z","message":{"role":"assistant","content":" learn"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:09.333144Z","message":{"role":"assistant","content":","},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:09.389476Z","message":{"role":"assistant","content":" and"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:09.446151Z","message":{"role":"assistant","content":" apply"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:09.502787Z","message":{"role":"assistant","content":" knowledge"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:09.559957Z","message":{"role":"assistant","content":" in"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:09.617517Z","message":{"role":"assistant","content":" any"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:09.674963Z","message":{"role":"assistant","content":" domain"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:09.734681Z","message":{"role":"assistant","content":","},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:09.792511Z","message":{"role":"assistant","content":" essentially"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:09.850351Z","message":{"role":"assistant","content":" possessing"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:09.907422Z","message":{"role":"assistant","content":" human"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:09.963919Z","message":{"role":"assistant","content":"-like"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:10.021546Z","message":{"role":"assistant","content":" intelligence"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:10.080018Z","message":{"role":"assistant","content":".\n\n"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:10.137681Z","message":{"role":"assistant","content":"While"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:10.199303Z","message":{"role":"assistant","content":" significant"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:10.260319Z","message":{"role":"assistant","content":" advancements"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:10.319131Z","message":{"role":"assistant","content":" have"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:10.376511Z","message":{"role":"assistant","content":" been"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:10.434788Z","message":{"role":"assistant","content":" made"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:10.492415Z","message":{"role":"assistant","content":" in"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:10.549226Z","message":{"role":"assistant","content":" AI"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:10.606443Z","message":{"role":"assistant","content":" research"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:10.663783Z","message":{"role":"assistant","content":" and"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:10.720685Z","message":{"role":"assistant","content":" applications"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:10.778403Z","message":{"role":"assistant","content":","},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:10.835553Z","message":{"role":"assistant","content":" there"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:10.894158Z","message":{"role":"assistant","content":" are"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:10.951468Z","message":{"role":"assistant","content":" ongoing"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:11.01023Z","message":{"role":"assistant","content":" debates"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:11.069539Z","message":{"role":"assistant","content":" about"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:11.130188Z","message":{"role":"assistant","content":" its"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:11.188908Z","message":{"role":"assistant","content":" ethics"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:11.246704Z","message":{"role":"assistant","content":","},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:11.306763Z","message":{"role":"assistant","content":" privacy"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:11.368747Z","message":{"role":"assistant","content":" implications"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:11.429586Z","message":{"role":"assistant","content":","},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:11.490068Z","message":{"role":"assistant","content":" and"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:11.561568Z","message":{"role":"assistant","content":" potential"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:11.627826Z","message":{"role":"assistant","content":" job"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:11.688314Z","message":{"role":"assistant","content":" displacement"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:11.749807Z","message":{"role":"assistant","content":" impacts"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:11.810666Z","message":{"role":"assistant","content":" on"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:11.871604Z","message":{"role":"assistant","content":" society"},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:11.932547Z","message":{"role":"assistant","content":"."},"done":false}
+            {"model":"llama3.1","created_at":"2025-02-17T18:33:11.992428Z","message":{"role":"assistant","content":""},"done_reason":"stop","done":true,"total_duration":23735163583,"load_duration":821623833,"prompt_eval_count":14,"prompt_eval_duration":3312000000,"eval_count":338,"eval_duration":19599000000}
+        headers:
+            Content-Type:
+                - application/x-ndjson
+            Date:
+                - Mon, 17 Feb 2025 18:32:52 GMT
+        status: 200 OK
+        code: 200
+        duration: 4.142955708s

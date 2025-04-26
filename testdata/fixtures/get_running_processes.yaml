@@ -1,0 +1,43 @@
+---
+version: 1
+interactions:
+    - request:
+        body: ""
+        form: {}
+        headers:
+            Content-Type:
+                - application/json
+        url: http://localhost:11434/api/process
+        method: GET
+      response:
+        body: 404 page not found
+        headers:
+            Content-Length:
+                - "18"
+            Content-Type:
+                - text/plain
+            Date:
+                - Mon, 17 Feb 2025 18:33:45 GMT
+        status: 404 Not Found
+        code: 404
+        duration: 440.792µs
+    - request:
+        body: ""
+        form: {}
+        headers:
+            Content-Type:
+                - application/json
+        url: http://localhost:11434/api/ps
+        method: GET
+      response:
+        body: '{"models":[]}'
+        headers:
+            Content-Length:
+                - "13"
+            Content-Type:
+                - application/json; charset=utf-8
+            Date:
+                - Mon, 17 Feb 2025 18:51:52 GMT
+        status: 200 OK
+        code: 200
+        duration: 2.561084ms
