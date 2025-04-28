@@ -5,12 +5,14 @@
 package ollama
 
 import (
+	"io"
 	"net/http"
 	"time"
 
 	"github.com/SamyRai/ollama-go/api"
 	"github.com/SamyRai/ollama-go/internal/client"
 	"github.com/SamyRai/ollama-go/internal/config"
+	"github.com/SamyRai/ollama-go/internal/utils"
 )
 
 // Version returns the current version of the ollama-go library.
@@ -58,6 +60,42 @@ func (c *Client) WithAPIKey(apiKey string) *Client {
 	c.config.APIKey = apiKey
 	c.client = client.NewClient(c.config)
 	return c
+}
+
+// WithDebugMode enables or disables debug logging.
+func (c *Client) WithDebugMode(debug bool) *Client {
+	c.config.Debug = debug
+	c.client = client.NewClient(c.config)
+	return c
+}
+
+// SetLogLevel sets the logging level for the client.
+// Valid levels are: "NONE", "ERROR", "WARN", "INFO", "DEBUG"
+func SetLogLevel(level string) {
+	var logLevel utils.LogLevel
+
+	switch level {
+	case "NONE":
+		logLevel = utils.LogLevelNone
+	case "ERROR":
+		logLevel = utils.LogLevelError
+	case "WARN":
+		logLevel = utils.LogLevelWarn
+	case "INFO":
+		logLevel = utils.LogLevelInfo
+	case "DEBUG":
+		logLevel = utils.LogLevelDebug
+	default:
+		logLevel = utils.LogLevelInfo // Default to INFO if invalid level
+	}
+
+	utils.SetGlobalLevel(logLevel)
+}
+
+// SetLogOutput sets the output destination for logs.
+// This can be used to redirect logs to a file or other writer.
+func SetLogOutput(w io.Writer) {
+	utils.SetGlobalOutput(w)
 }
 
 // Chat returns a new ChatBuilder for constructing chat requests.

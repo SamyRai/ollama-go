@@ -1,32 +1,28 @@
 package tests
 
 import (
-	"github.com/SamyRai/ollama-go/client"
-	"github.com/SamyRai/ollama-go/config"
-	"github.com/SamyRai/ollama-go/structures"
+	"testing"
+
+	"github.com/SamyRai/ollama-go/internal/structures"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"gopkg.in/dnaeon/go-vcr.v2/recorder"
-	"testing"
 )
 
 // TestChat validates the chat API functionality.
 func TestChat(t *testing.T) {
-	rec, err := recorder.New("fixtures/chat")
-	require.NoError(t, err)
+	cli, rec := SetupVCRTest(t, "chat")
 	defer rec.Stop()
 
-	cli := client.NewClient(config.DefaultConfig())
-	cli.HTTPClient.Transport = rec
-
 	req := structures.ChatRequest{
-		Model: "llama3.1",
+		Model: "llama3", // Make sure model name matches the one used when recording
 		Messages: []structures.Message{
 			{Role: "user", Content: "What is AI?"},
 		},
 	}
 
-	resp, err := cli.Chat(req)
+	resp, err := cli.Chat(req, func(response structures.ChatResponse) {
+		// Streaming callback - not needed for this test
+	})
 
 	require.NoError(t, err)
 	require.NotNil(t, resp)

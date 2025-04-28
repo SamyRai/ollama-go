@@ -24,3 +24,31 @@ go.work.sum
 
 # env file
 .env
+
+# Coverage files
+coverage.html
+coverage.txt
+
+# Build output
+bin/
+dist/
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Debug files
+__debug_bin
+debug.test
+
+# Local development files
+*.local.go
+local.env
+notes.md
+TODO.md
+
+# Logs
+*.log

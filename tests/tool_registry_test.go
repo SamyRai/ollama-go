@@ -2,8 +2,8 @@ package tests
 
 import (
 	"errors"
-	"github.com/SamyRai/ollama-go/structures"
-	"github.com/SamyRai/ollama-go/tools"
+	"github.com/SamyRai/ollama-go/internal/structures"
+	"github.com/SamyRai/ollama-go/internal/tools"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"

@@ -58,6 +58,12 @@ deps:
 	go mod tidy
 	go mod download
 
+# Install golangci-lint if not installed
+release:
+    @echo "Creating new release $(VERSION)"
+    @git tag -a v$(VERSION) -m "Release v$(VERSION)"
+    @git push origin v$(VERSION)
+
 # Help command
 help:
 	@echo "Available targets:"
@@ -65,6 +71,7 @@ help:
 	@echo "  test           - Run tests"
 	@echo "  test-coverage  - Run tests with coverage"
 	@echo "  lint           - Run linting"
+	@echo "  release        - Create a new release"
 	@echo "  examples       - Build all examples"
 	@echo "  run-chat       - Run chat example"
 	@echo "  run-completion - Run completion example"
