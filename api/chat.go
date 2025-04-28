@@ -1,3 +1,6 @@
+// Package api provides the high-level API layer for interacting with Ollama.
+// It includes builders and managers for different API functionalities like chat,
+// completion, embeddings, and model management.
 package api
 
 import (
@@ -36,7 +39,6 @@ type ChatBuilder struct {
 	tools    []Tool
 	format   string
 	options  structures.Options
-	stream   bool
 }
 
 // NewChatBuilder creates a new ChatBuilder.
@@ -126,6 +128,12 @@ func (b *ChatBuilder) WithToolResult(toolName string, result interface{}) *ChatB
 
 // Execute sends the chat request and returns the response.
 func (b *ChatBuilder) Execute(ctx context.Context) (*ChatResponse, error) {
+	// Context could be used in the future for cancellation or timeouts
+	// This keeps the parameter for API consistency and future extensions
+	if ctx.Err() != nil {
+		return nil, ctx.Err()
+	}
+
 	req := structures.ChatRequest{
 		Model:    b.model,
 		Messages: b.messages,
@@ -136,12 +144,18 @@ func (b *ChatBuilder) Execute(ctx context.Context) (*ChatResponse, error) {
 	}
 
 	// Use a no-op callback since we're not streaming
-	resp, err := b.client.Chat(req, func(resp structures.ChatResponse) {})
+	resp, err := b.client.Chat(req, func(_ structures.ChatResponse) {})
 	return resp, err
 }
 
 // Stream sends the chat request and streams the response through the callback.
 func (b *ChatBuilder) Stream(ctx context.Context, callback func(*ChatResponse)) error {
+	// Context could be used for cancellation or timeouts
+	// This keeps the parameter for API consistency and future extensions
+	if ctx.Err() != nil {
+		return ctx.Err()
+	}
+
 	req := structures.ChatRequest{
 		Model:    b.model,
 		Messages: b.messages,

@@ -1,3 +1,5 @@
+// Package utils provides utility functionality used throughout the Ollama Go client,
+// including error handling, logging, and other helper functions.
 package utils
 
 import (

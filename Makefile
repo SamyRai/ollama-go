@@ -58,11 +58,10 @@ deps:
 	go mod tidy
 	go mod download
 
-# Install golangci-lint if not installed
 release:
-    @echo "Creating new release $(VERSION)"
-    @git tag -a v$(VERSION) -m "Release v$(VERSION)"
-    @git push origin v$(VERSION)
+	@echo "Creating new release $(VERSION)"
+	@git tag -a v$(VERSION) -m "Release v$(VERSION)"
+	@git push origin v$(VERSION)"
 
 # Help command
 help:

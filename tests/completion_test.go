@@ -11,7 +11,12 @@ import (
 // TestGenerateCompletion validates text completion API behavior.
 func TestGenerateCompletion(t *testing.T) {
 	cli, rec := SetupVCRTest(t, "generate_completion")
-	defer rec.Stop()
+	defer func() {
+		err := rec.Stop()
+		if err != nil {
+			t.Logf("Failed to stop recorder: %v", err)
+		}
+	}()
 
 	req := structures.CompletionRequest{
 		Model:  "llama3.1", // Match the model name used in the recorded fixture
@@ -19,7 +24,7 @@ func TestGenerateCompletion(t *testing.T) {
 		Stream: false,
 	}
 
-	resp, err := cli.GenerateCompletion(req, func(response structures.CompletionResponse) {
+	resp, err := cli.GenerateCompletion(req, func(_ structures.CompletionResponse) {
 		// Streaming callback - not needed for non-streaming test
 	})
 
@@ -32,7 +37,12 @@ func TestGenerateCompletion(t *testing.T) {
 // TestGenerateCompletionStream validates streaming text completion.
 func TestGenerateCompletionStream(t *testing.T) {
 	cli, rec := SetupVCRTest(t, "generate_completion_stream")
-	defer rec.Stop()
+	defer func() {
+		err := rec.Stop()
+		if err != nil {
+			t.Logf("Failed to stop recorder: %v", err)
+		}
+	}()
 
 	req := structures.CompletionRequest{
 		Model:  "llama3.1", // Match the model name used in the recorded fixture

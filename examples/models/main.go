@@ -1,3 +1,5 @@
+// Package main demonstrates how to use the Ollama Go library for model management.
+// This example shows how to list models, get model details, and check running model processes.
 package main
 
 import (

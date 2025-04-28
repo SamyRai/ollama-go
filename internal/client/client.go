@@ -69,7 +69,11 @@ func (c *OllamaClient) Request(method, endpoint string, body interface{}, respon
 		c.Logger.Error("Request failed: %v", err)
 		return err
 	}
-	defer resp.Body.Close()
+	defer func() {
+		if err := resp.Body.Close(); err != nil {
+			c.Logger.Error("Failed to close response body: %v", err)
+		}
+	}()
 
 	c.Logger.Debug("Received response with status: %s", resp.Status)
 
@@ -130,7 +134,11 @@ func (c *OllamaClient) StreamRequest(method, endpoint string, body interface{}, 
 		c.Logger.Error("Streaming request failed: %v", err)
 		return err
 	}
-	defer resp.Body.Close()
+	defer func() {
+		if err := resp.Body.Close(); err != nil {
+			c.Logger.Error("Failed to close response body: %v", err)
+		}
+	}()
 
 	c.Logger.Debug("Received streaming response with status: %s", resp.Status)
 

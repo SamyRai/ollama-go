@@ -1,3 +1,5 @@
+// Package main demonstrates how to use the Ollama Go library for text completion.
+// This example shows basic completion, streaming, and using advanced options.
 package main
 
 import (

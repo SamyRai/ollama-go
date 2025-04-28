@@ -71,6 +71,7 @@ type ModelProcessResponse struct {
 	Models []ModelProcess `json:"models"`
 }
 
+// ModelProcess contains information about a running model process in Ollama.
 type ModelProcess struct {
 	Name      string       `json:"name"`
 	Model     string       `json:"model"`

@@ -1,3 +1,5 @@
+// Package client implements the core HTTP client functionality for interacting with the Ollama API.
+// It handles both streaming and non-streaming requests for all API endpoints.
 package client
 
 import (

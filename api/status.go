@@ -29,11 +29,11 @@ func NewStatusManager(client *client.OllamaClient) *StatusManager {
 }
 
 // GetVersion retrieves the current API version.
-func (s *StatusManager) GetVersion(ctx context.Context) (*VersionResponse, error) {
+func (s *StatusManager) GetVersion(_ context.Context) (*VersionResponse, error) {
 	return s.client.GetVersion()
 }
 
 // GetRunningProcesses retrieves the list of running models.
-func (s *StatusManager) GetRunningProcesses(ctx context.Context) (*ModelProcessResponse, error) {
+func (s *StatusManager) GetRunningProcesses(_ context.Context) (*ModelProcessResponse, error) {
 	return s.client.GetRunningProcesses()
 }

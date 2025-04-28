@@ -1,3 +1,5 @@
+// Package structures provides data structures used throughout the Ollama Go client.
+// It includes request and response objects, options, and other types.
 package structures
 
 // Options defines customizable parameters for model behavior.

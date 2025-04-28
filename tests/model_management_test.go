@@ -11,7 +11,12 @@ import (
 // TestCreateModel validates model creation.
 func TestCreateModel(t *testing.T) {
 	cli, rec := SetupVCRTest(t, "create_model")
-	defer rec.Stop()
+	defer func() {
+		err := rec.Stop()
+		if err != nil {
+			t.Logf("Failed to stop recorder: %v", err)
+		}
+	}()
 
 	req := structures.ModelManagementRequest{Name: "test-model"}
 
@@ -23,7 +28,12 @@ func TestCreateModel(t *testing.T) {
 // TestDeleteModel validates model deletion.
 func TestDeleteModel(t *testing.T) {
 	cli, rec := SetupVCRTest(t, "delete_model")
-	defer rec.Stop()
+	defer func() {
+		err := rec.Stop()
+		if err != nil {
+			t.Logf("Failed to stop recorder: %v", err)
+		}
+	}()
 
 	// When running with recorded fixtures, a 404 might indicate
 	// that the fixture was recorded when the model didn't exist
@@ -39,7 +49,12 @@ func TestDeleteModel(t *testing.T) {
 // TestCopyModel validates model copying.
 func TestCopyModel(t *testing.T) {
 	cli, rec := SetupVCRTest(t, "copy_model")
-	defer rec.Stop()
+	defer func() {
+		err := rec.Stop()
+		if err != nil {
+			t.Logf("Failed to stop recorder: %v", err)
+		}
+	}()
 
 	err := cli.CopyModel("test-model", "test-model-copy")
 
@@ -53,7 +68,12 @@ func TestCopyModel(t *testing.T) {
 // TestPullModel validates pulling a model from a remote source.
 func TestPullModel(t *testing.T) {
 	cli, rec := SetupVCRTest(t, "pull_model")
-	defer rec.Stop()
+	defer func() {
+		err := rec.Stop()
+		if err != nil {
+			t.Logf("Failed to stop recorder: %v", err)
+		}
+	}()
 
 	err := cli.PullModel("test-model")
 
@@ -63,7 +83,12 @@ func TestPullModel(t *testing.T) {
 // TestPushModel validates pushing a model to a remote source.
 func TestPushModel(t *testing.T) {
 	cli, rec := SetupVCRTest(t, "push_model")
-	defer rec.Stop()
+	defer func() {
+		err := rec.Stop()
+		if err != nil {
+			t.Logf("Failed to stop recorder: %v", err)
+		}
+	}()
 
 	err := cli.PushModel("test-model")
 

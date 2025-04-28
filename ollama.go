@@ -99,11 +99,45 @@ func SetLogOutput(w io.Writer) {
 }
 
 // Chat returns a new ChatBuilder for constructing chat requests.
+//
+// The ChatBuilder provides a fluent interface for creating chat requests:
+//
+//	client.Chat().
+//		WithModel("llama3").
+//		WithSystemMessage("You are a helpful assistant.").
+//		WithMessage("user", "What is artificial intelligence?").
+//		Execute(ctx)
+//
+// For streaming responses, use the Stream method instead of Execute:
+//
+//	client.Chat().
+//		WithModel("llama3").
+//		WithMessage("user", "Write a poem.").
+//		Stream(ctx, func(resp *ChatResponse) {
+//			fmt.Print(resp.Message.Content)
+//		})
 func (c *Client) Chat() *api.ChatBuilder {
 	return api.NewChatBuilder(c.client)
 }
 
 // Completion returns a new CompletionBuilder for constructing completion requests.
+//
+// The CompletionBuilder provides a fluent interface for text generation:
+//
+//	client.Completion().
+//		WithModel("llama3").
+//		WithPrompt("Once upon a time").
+//		WithTemperature(0.8).
+//		Execute(ctx)
+//
+// For streaming completions, use the Stream method instead of Execute:
+//
+//	client.Completion().
+//		WithModel("llama3").
+//		WithPrompt("Write a story about").
+//		Stream(ctx, func(resp *CompletionResponse) {
+//			fmt.Print(resp.Response)
+//		})
 func (c *Client) Completion() *api.CompletionBuilder {
 	return api.NewCompletionBuilder(c.client)
 }
@@ -141,17 +175,36 @@ func ApplyOptions(o *Options, opts ...func(*Options)) {
 	api.ApplyOptions(o, opts...)
 }
 
-// WithTemperature sets the temperature parameter.
+// WithTemperature sets the temperature parameter for text generation.
+//
+// Temperature controls randomness in generation:
+//   - Values closer to 0 produce more deterministic responses
+//   - Values closer to 1 produce more creative and diverse responses
+//   - The recommended range is 0.0 - 1.0, with 0.7 being a common default
 func WithTemperature(temperature float64) func(*Options) {
 	return api.WithTemperature(temperature)
 }
 
-// WithTopP sets the top_p parameter.
+// WithTopP sets the top_p parameter for nucleus sampling.
+//
+// Top-p (nucleus) sampling:
+//   - Only considers tokens whose cumulative probability exceeds the probability threshold p
+//   - Lower values (0.5) are more focused and deterministic
+//   - Higher values (0.9) allow more diversity but may be less coherent
+//   - A value of 1.0 disables this effect
+//   - Often produces more diverse outputs than temperature sampling alone
 func WithTopP(topP float64) func(*Options) {
 	return api.WithTopP(topP)
 }
 
-// WithTopK sets the top_k parameter.
+// WithTopK sets the top_k parameter for limiting vocabulary in sampling.
+//
+// Top-k sampling:
+//   - Limits token selection to the k highest probability tokens
+//   - Lower values (10) focus on most likely tokens, making output more conservative
+//   - Higher values (50+) allow for more diversity in generation
+//   - Works well when combined with top_p and temperature
+//   - A value of 0 disables this effect (all tokens considered)
 func WithTopK(topK int) func(*Options) {
 	return api.WithTopK(topK)
 }
@@ -171,22 +224,50 @@ func WithMirostatEta(mirostatEta float64) func(*Options) {
 	return api.WithMirostatEta(mirostatEta)
 }
 
-// WithRepeatPenalty sets the repeat_penalty parameter.
+// WithRepeatPenalty sets the repeat_penalty parameter to discourage repetition in generation.
+//
+// Repeat penalty:
+//   - Controls how strongly to penalize repetitions of the same tokens
+//   - Higher values (1.1 - 2.0) reduce repetition more aggressively
+//   - A value of 1.0 applies no penalty
+//   - Particularly useful for creative text generation like stories
+//   - Works in conjunction with RepeatLastN to determine how far back to look
 func WithRepeatPenalty(repeatPenalty float64) func(*Options) {
 	return api.WithRepeatPenalty(repeatPenalty)
 }
 
-// WithRepeatLastN sets the repeat_last_n parameter.
+// WithRepeatLastN sets the repeat_last_n parameter for repetition control.
+//
+// Repeat last N:
+//   - Specifies how many previous tokens to consider for the repeat penalty
+//   - Higher values (e.g., 64, 128, 256) reduce repetition over larger contexts
+//   - Lower values (e.g., 8, 16) only penalize immediate repetitions
+//   - Works in conjunction with RepeatPenalty parameter
+//   - Setting this too high may prevent intentional repetitions like list numbering
 func WithRepeatLastN(repeatLastN int) func(*Options) {
 	return api.WithRepeatLastN(repeatLastN)
 }
 
-// WithFrequencyPenalty sets the frequency_penalty parameter.
+// WithFrequencyPenalty sets the frequency_penalty parameter to reduce repetition.
+//
+// Frequency penalty:
+//   - Penalizes tokens based on how frequently they've appeared in the generated text
+//   - Higher values (0.1 - 1.0) reduce the likelihood of repeating the same words
+//   - Positive values favor tokens that appear less often in the output
+//   - Useful for encouraging diversity in longer generations
+//   - Differs from repeat_penalty by considering overall frequency rather than sequences
 func WithFrequencyPenalty(frequencyPenalty float64) func(*Options) {
 	return api.WithFrequencyPenalty(frequencyPenalty)
 }
 
-// WithPresencePenalty sets the presence_penalty parameter.
+// WithPresencePenalty sets the presence_penalty parameter to reduce topic repetition.
+//
+// Presence penalty:
+//   - Penalizes tokens based on their presence in the generated text so far
+//   - Higher values (0.1 - 1.0) encourage the model to talk about new topics
+//   - A value of 0.0 applies no penalty
+//   - Helpful for open-ended conversations to prevent the model from fixating on topics
+//   - Unlike frequency penalty, this considers presence (used or not) rather than frequency
 func WithPresencePenalty(presencePenalty float64) func(*Options) {
 	return api.WithPresencePenalty(presencePenalty)
 }
@@ -212,32 +293,51 @@ func WithGrammar(grammar string) func(*Options) {
 }
 
 // Type aliases for public API
-type (
-	// Chat API
-	ChatResponse     = api.ChatResponse
-	Message          = api.Message
-	Tool             = api.Tool
-	ToolFunction     = api.ToolFunction
-	ToolParam        = api.ToolParam
-	ToolCall         = api.ToolCall
-	ToolCallFunction = api.ToolCallFunction
 
-	// Completion API
-	CompletionResponse = api.CompletionResponse
+// Message represents a single message in a chat conversation.
+type Message = api.Message
 
-	// Embeddings API
-	EmbeddingResponse = api.EmbeddingResponse
+// ChatResponse represents the model's reply in a chat conversation.
+type ChatResponse = api.ChatResponse
 
-	// Model Management API
-	ModelListResponse = api.ModelListResponse
-	ModelInfo         = api.ModelInfo
-	ShowModelResponse = api.ShowModelResponse
+// Tool defines a callable function available to models.
+type Tool = api.Tool
 
-	// Status API
-	VersionResponse      = api.VersionResponse
-	ModelProcessResponse = api.ModelProcessResponse
-	ModelProcess         = api.ModelProcess
-)
+// ToolFunction describes the function a model can invoke.
+type ToolFunction = api.ToolFunction
+
+// ToolParam defines a function parameter.
+type ToolParam = api.ToolParam
+
+// ToolCall represents an invocation of a tool.
+type ToolCall = api.ToolCall
+
+// ToolCallFunction contains function call arguments.
+type ToolCallFunction = api.ToolCallFunction
+
+// CompletionResponse represents the model's response to a text generation request.
+type CompletionResponse = api.CompletionResponse
+
+// EmbeddingResponse contains generated embeddings.
+type EmbeddingResponse = api.EmbeddingResponse
+
+// ModelListResponse contains available local models.
+type ModelListResponse = api.ModelListResponse
+
+// ModelInfo contains details about a local model.
+type ModelInfo = api.ModelInfo
+
+// ShowModelResponse contains model details.
+type ShowModelResponse = api.ShowModelResponse
+
+// VersionResponse returns the server version.
+type VersionResponse = api.VersionResponse
+
+// ModelProcessResponse lists running models.
+type ModelProcessResponse = api.ModelProcessResponse
+
+// ModelProcess contains information about a running model process in Ollama.
+type ModelProcess = api.ModelProcess
 
 // RawClient returns the underlying OllamaClient for advanced usage.
 // This is provided for cases where the high-level API doesn't provide

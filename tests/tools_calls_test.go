@@ -11,7 +11,12 @@ import (
 // TestChat validates the chat API functionality and tool call management.
 func TestChatWithTools(t *testing.T) {
 	cli, rec := SetupVCRTest(t, "chat_with_tools")
-	defer rec.Stop()
+	defer func() {
+		err := rec.Stop()
+		if err != nil {
+			t.Logf("Failed to stop recorder: %v", err)
+		}
+	}()
 
 	// Define the tools available to the model during chat
 	tools := []structures.Tool{
@@ -40,7 +45,7 @@ func TestChatWithTools(t *testing.T) {
 	}
 
 	// Make the API call to Chat
-	resp, err := cli.Chat(req, func(response structures.ChatResponse) {
+	resp, err := cli.Chat(req, func(_ structures.ChatResponse) {
 		// Callback for streaming responses - not needed for this test
 	})
 

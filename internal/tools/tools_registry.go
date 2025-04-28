@@ -1,3 +1,5 @@
+// Package tools provides functionality for registering, managing, and executing tools
+// that can be called by language models during chat and completion requests.
 package tools
 
 import (

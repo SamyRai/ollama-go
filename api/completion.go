@@ -18,7 +18,6 @@ type CompletionBuilder struct {
 	suffix  string
 	images  []string
 	options structures.Options
-	stream  bool
 	raw     bool
 }
 
@@ -85,7 +84,7 @@ func (b *CompletionBuilder) WithRaw(raw bool) *CompletionBuilder {
 }
 
 // Execute sends the completion request and returns the response.
-func (b *CompletionBuilder) Execute(ctx context.Context) (*CompletionResponse, error) {
+func (b *CompletionBuilder) Execute(_ context.Context) (*CompletionResponse, error) {
 	req := structures.CompletionRequest{
 		Model:   b.model,
 		Prompt:  b.prompt,
@@ -97,12 +96,12 @@ func (b *CompletionBuilder) Execute(ctx context.Context) (*CompletionResponse, e
 	}
 
 	// Use a no-op callback since we're not streaming
-	resp, err := b.client.GenerateCompletion(req, func(resp structures.CompletionResponse) {})
+	resp, err := b.client.GenerateCompletion(req, func(_ structures.CompletionResponse) {})
 	return resp, err
 }
 
 // Stream sends the completion request and streams the response through the callback.
-func (b *CompletionBuilder) Stream(ctx context.Context, callback func(*CompletionResponse)) error {
+func (b *CompletionBuilder) Stream(_ context.Context, callback func(*CompletionResponse)) error {
 	req := structures.CompletionRequest{
 		Model:   b.model,
 		Prompt:  b.prompt,

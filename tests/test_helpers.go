@@ -16,7 +16,10 @@ import (
 // It ensures tests use recorded responses when available.
 func SetupVCRTest(t *testing.T, fixtureName string) (*client.OllamaClient, *recorder.Recorder) {
 	// Force replay mode to ensure we use recorded responses when available
-	os.Setenv("VCR_MODE", "replay")
+	err := os.Setenv("VCR_MODE", "replay")
+	if err != nil {
+		t.Logf("Failed to set VCR_MODE environment variable: %v", err)
+	}
 
 	// Get absolute path to the test directory for reliable fixture loading
 	_, filename, _, _ := runtime.Caller(0)

@@ -1,3 +1,5 @@
+// Package main demonstrates how to use the Ollama Go library for chat interactions.
+// This example shows both basic and streaming chat functionality.
 package main
 
 import (

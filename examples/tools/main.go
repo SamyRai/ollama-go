@@ -1,3 +1,5 @@
+// Package main demonstrates how to use the Ollama Go library with function calling tools.
+// This example shows how to register, define, and execute tool functions in a chat conversation.
 package main
 
 import (
@@ -10,7 +12,7 @@ import (
 	"github.com/SamyRai/ollama-go"
 )
 
-// Simple weather data structure
+// WeatherData represents weather information for a specific location.
 type WeatherData struct {
 	Location    string  `json:"location"`
 	Temperature float64 `json:"temperature"`

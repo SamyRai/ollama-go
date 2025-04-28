@@ -1,3 +1,5 @@
+// Package main demonstrates how to use the Ollama Go library for generating embeddings.
+// This example shows how to generate embeddings for both single and multiple text inputs.
 package main
 
 import (

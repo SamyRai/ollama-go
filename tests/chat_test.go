@@ -1,3 +1,5 @@
+// Package tests contains integration tests for the Ollama Go client API.
+// Tests use the VCR library to record API interactions for repeatable testing.
 package tests
 
 import (
@@ -11,7 +13,12 @@ import (
 // TestChat validates the chat API functionality.
 func TestChat(t *testing.T) {
 	cli, rec := SetupVCRTest(t, "chat")
-	defer rec.Stop()
+	defer func() {
+		err := rec.Stop()
+		if err != nil {
+			t.Logf("Failed to stop recorder: %v", err)
+		}
+	}()
 
 	req := structures.ChatRequest{
 		Model: "llama3", // Make sure model name matches the one used when recording
@@ -20,7 +27,7 @@ func TestChat(t *testing.T) {
 		},
 	}
 
-	resp, err := cli.Chat(req, func(response structures.ChatResponse) {
+	resp, err := cli.Chat(req, func(_ structures.ChatResponse) {
 		// Streaming callback - not needed for this test
 	})
 

@@ -58,7 +58,7 @@ func (b *EmbeddingsBuilder) WithOptions(options structures.Options) *EmbeddingsB
 }
 
 // Execute sends the embeddings request and returns the response.
-func (b *EmbeddingsBuilder) Execute(ctx context.Context) (*EmbeddingResponse, error) {
+func (b *EmbeddingsBuilder) Execute(_ context.Context) (*EmbeddingResponse, error) {
 	req := structures.EmbeddingRequest{
 		Model:    b.model,
 		Input:    b.input,
