@@ -1,12 +1,12 @@
 package tests
 
 import (
-	"github.com/SamyRai/ollama-go/client"
-	"github.com/SamyRai/ollama-go/config"
+	"testing"
+
+	"github.com/SamyRai/ollama-go/internal/client"
+	"github.com/SamyRai/ollama-go/internal/config"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"log"
-	"testing"
 )
 
 // TestOllamaClientInitialization checks if the client initializes correctly.
@@ -25,9 +25,8 @@ func TestRequestFailure(t *testing.T) {
 
 	var resp interface{}
 	err := cli.Request("GET", "/api/version", nil, &resp)
-	log.Printf("Error: %v", err)
-	log.Printf("Response: %v", resp)
 	require.Error(t, err, "Expected an error for an invalid URL")
+	assert.Nil(t, resp, "Response should be nil when request fails")
 }
 
 // TestInvalidEndpoint ensures the client handles 404 errors correctly.

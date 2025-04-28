@@ -1,25 +1,22 @@
 package tests
 
 import (
-	"github.com/SamyRai/ollama-go/client"
-	"github.com/SamyRai/ollama-go/config"
-	"github.com/SamyRai/ollama-go/structures"
+	"testing"
+
+	"github.com/SamyRai/ollama-go/internal/structures"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"gopkg.in/dnaeon/go-vcr.v2/recorder"
-	"log"
-	"testing"
 )
 
 // TestChat validates the chat API functionality and tool call management.
 func TestChatWithTools(t *testing.T) {
-	// Start the VCR recorder to mock the HTTP requests
-	rec, err := recorder.New("fixtures/chat_with_tools")
-	require.NoError(t, err)
-	defer rec.Stop()
-
-	cli := client.NewClient(config.DefaultConfig())
-	cli.HTTPClient.Transport = rec
+	cli, rec := SetupVCRTest(t, "chat_with_tools")
+	defer func() {
+		err := rec.Stop()
+		if err != nil {
+			t.Logf("Failed to stop recorder: %v", err)
+		}
+	}()
 
 	// Define the tools available to the model during chat
 	tools := []structures.Tool{
@@ -40,7 +37,7 @@ func TestChatWithTools(t *testing.T) {
 
 	// Construct the chat request with the tools
 	req := structures.ChatRequest{
-		Model: "llama3.1",
+		Model: "llama3", // Make sure model name matches what was used in recording
 		Messages: []structures.Message{
 			{Role: "user", Content: "What is the weather like in Paris?"},
 		},
@@ -48,7 +45,9 @@ func TestChatWithTools(t *testing.T) {
 	}
 
 	// Make the API call to Chat
-	resp, err := cli.Chat(req)
+	resp, err := cli.Chat(req, func(_ structures.ChatResponse) {
+		// Callback for streaming responses - not needed for this test
+	})
 
 	// Validate no errors occurred during the request
 	require.NoError(t, err)
@@ -56,10 +55,6 @@ func TestChatWithTools(t *testing.T) {
 
 	// Assert that the response message is as expected
 	assert.Equal(t, "assistant", resp.Message.Role)
-	log.Print(resp)
-	log.Printf("resp.Message.Content: %s", resp.Message.Content)
-	log.Printf("resp.Message.Tools_calls: %s", resp.Message.ToolCalls)
-	log.Printf("resp.Tools_calls: %s", resp.ToolCalls)
 
 	// Check that tool calls were correctly passed and returned in the response
 	require.NotNil(t, resp.Message.ToolCalls)

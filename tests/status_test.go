@@ -1,22 +1,21 @@
 package tests
 
 import (
-	"github.com/SamyRai/ollama-go/client"
-	"github.com/SamyRai/ollama-go/config"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"gopkg.in/dnaeon/go-vcr.v2/recorder"
-	"testing"
 )
 
 // TestGetVersion validates retrieving the API version.
 func TestGetVersion(t *testing.T) {
-	rec, err := recorder.New("fixtures/get_version")
-	require.NoError(t, err)
-	defer rec.Stop()
-
-	cli := client.NewClient(config.DefaultConfig())
-	cli.HTTPClient.Transport = rec
+	cli, rec := SetupVCRTest(t, "get_version")
+	defer func() {
+		err := rec.Stop()
+		if err != nil {
+			t.Logf("Failed to stop recorder: %v", err)
+		}
+	}()
 
 	resp, err := cli.GetVersion()
 
@@ -27,12 +26,13 @@ func TestGetVersion(t *testing.T) {
 
 // TestGetRunningProcesses validates retrieving running model processes.
 func TestGetRunningProcesses(t *testing.T) {
-	rec, err := recorder.New("fixtures/get_running_processes")
-	require.NoError(t, err)
-	defer rec.Stop()
-
-	cli := client.NewClient(config.DefaultConfig())
-	cli.HTTPClient.Transport = rec
+	cli, rec := SetupVCRTest(t, "get_running_processes")
+	defer func() {
+		err := rec.Stop()
+		if err != nil {
+			t.Logf("Failed to stop recorder: %v", err)
+		}
+	}()
 
 	resp, err := cli.GetRunningProcesses()
 
