@@ -5,7 +5,10 @@ import (
 	"github.com/SamyRai/ollama-go/structures"
 )
 
-// Chat handles both streaming and non-streaming chat interactions.
+// Chat sends a request to the /api/chat endpoint.
+// It supports both streaming and non-streaming responses.
+// For streaming, a callback function is required to handle each response chunk.
+// For non-streaming, it returns a single chat response.
 func (c *OllamaClient) Chat(req structures.ChatRequest, callback func(structures.ChatResponse)) (*structures.ChatResponse, error) {
 	if req.Stream {
 		// Handle streaming response

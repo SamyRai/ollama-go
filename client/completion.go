@@ -5,7 +5,10 @@ import (
 	"github.com/SamyRai/ollama-go/structures"
 )
 
-// GenerateCompletion handles both streaming and non-streaming text generation.
+// GenerateCompletion sends a request to the /api/generate endpoint for text completion.
+// It supports both streaming and non-streaming responses.
+// For streaming, a callback function is required to handle each response chunk.
+// For non-streaming, it returns a single completion response.
 func (c *OllamaClient) GenerateCompletion(req structures.CompletionRequest, callback func(structures.CompletionResponse)) (*structures.CompletionResponse, error) {
 	if req.Stream {
 		// Handle streaming response

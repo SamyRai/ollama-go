@@ -30,7 +30,6 @@ type ChatResponse struct {
 	Message    Message                `json:"message"`               // Assistant's message.
 	DoneReason string                 `json:"done_reason,omitempty"` // Optional: Reason for stopping.
 	Done       bool                   `json:"done"`                  // Whether the chat response is complete.
-	ToolCalls  []ToolCall             `json:"tool_calls,omitempty"`  // Tool calls (structured return).
 	Metadata   map[string]interface{} `json:"metadata,omitempty"`    // Optional: Additional metadata.
 }
 

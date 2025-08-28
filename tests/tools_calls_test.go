@@ -48,7 +48,7 @@ func TestChatWithTools(t *testing.T) {
 	}
 
 	// Make the API call to Chat
-	resp, err := cli.Chat(req)
+	resp, err := cli.Chat(req, nil)
 
 	// Validate no errors occurred during the request
 	require.NoError(t, err)
@@ -56,10 +56,8 @@ func TestChatWithTools(t *testing.T) {
 
 	// Assert that the response message is as expected
 	assert.Equal(t, "assistant", resp.Message.Role)
-	log.Print(resp)
 	log.Printf("resp.Message.Content: %s", resp.Message.Content)
 	log.Printf("resp.Message.Tools_calls: %s", resp.Message.ToolCalls)
-	log.Printf("resp.Tools_calls: %s", resp.ToolCalls)
 
 	// Check that tool calls were correctly passed and returned in the response
 	require.NotNil(t, resp.Message.ToolCalls)
