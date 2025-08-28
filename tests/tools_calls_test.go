@@ -48,7 +48,7 @@ func TestChatWithTools(t *testing.T) {
 	}
 
 	// Make the API call to Chat
-	resp, err := cli.Chat(req)
+	resp, err := cli.Chat(req, nil)
 
 	// Validate no errors occurred during the request
 	require.NoError(t, err)

@@ -26,7 +26,7 @@ func TestChat(t *testing.T) {
 		},
 	}
 
-	resp, err := cli.Chat(req)
+	resp, err := cli.Chat(req, nil)
 
 	require.NoError(t, err)
 	require.NotNil(t, resp)

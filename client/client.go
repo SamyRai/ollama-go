@@ -53,11 +53,16 @@ func (c *OllamaClient) Request(method, endpoint string, body interface{}, respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode >= 400 {
-		return errors.New("API request failed with status: " + resp.Status)
+		bodyBytes, _ := io.ReadAll(resp.Body)
+		return errors.New("API request failed with status: " + resp.Status + " and body: " + string(bodyBytes))
 	}
 
-	// Decode the response
-	return json.NewDecoder(resp.Body).Decode(response)
+	// Decode the response if a response container is provided
+	if response != nil {
+		return json.NewDecoder(resp.Body).Decode(response)
+	}
+
+	return nil
 }
 
 // StreamRequest handles streaming HTTP responses.

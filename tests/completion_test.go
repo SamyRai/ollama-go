@@ -26,7 +26,7 @@ func TestGenerateCompletion(t *testing.T) {
 		Stream: false,
 	}
 
-	resp, err := cli.GenerateCompletion(req)
+	resp, err := cli.GenerateCompletion(req, nil)
 
 	require.NoError(t, err)
 	require.NotNil(t, resp)
@@ -49,8 +49,11 @@ func TestGenerateCompletionStream(t *testing.T) {
 		Stream: true,
 	}
 
-	resp, err := cli.GenerateCompletion(req)
-	log.Printf("resp.Response: %v", resp)
+	var responses []structures.CompletionResponse
+	_, err = cli.GenerateCompletion(req, func(resp structures.CompletionResponse) {
+		responses = append(responses, resp)
+	})
+	log.Printf("responses: %v", responses)
 	require.NoError(t, err)
-	assert.NotEmpty(t, resp)
+	assert.NotEmpty(t, responses)
 }
