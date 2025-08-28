@@ -56,6 +56,10 @@ func main() {
 }
 ```
 
+## Function Calling
+
+This library supports function calling, allowing you to connect the Ollama models to external tools. For a detailed example of how to use this feature, please see the example code in `examples/tool_calling/main.go`.
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a pull request or open an issue if you have any feedback or suggestions.

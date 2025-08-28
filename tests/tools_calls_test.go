@@ -56,10 +56,8 @@ func TestChatWithTools(t *testing.T) {
 
 	// Assert that the response message is as expected
 	assert.Equal(t, "assistant", resp.Message.Role)
-	log.Print(resp)
 	log.Printf("resp.Message.Content: %s", resp.Message.Content)
 	log.Printf("resp.Message.Tools_calls: %s", resp.Message.ToolCalls)
-	log.Printf("resp.Tools_calls: %s", resp.ToolCalls)
 
 	// Check that tool calls were correctly passed and returned in the response
 	require.NotNil(t, resp.Message.ToolCalls)

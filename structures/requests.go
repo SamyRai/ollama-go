@@ -6,21 +6,23 @@ package structures
 
 // Message represents a single message in a chat conversation.
 type Message struct {
-	Role      string     `json:"role"`                 // Role of the sender (e.g., "assistant").
-	Content   string     `json:"content"`              // Message content.
-	Images    []string   `json:"images,omitempty"`     // Optional: Base64-encoded images (for multimodal models).
-	ToolCalls []ToolCall `json:"tool_calls,omitempty"` // Optional: Tool calls made by the model.
+	Role       string     `json:"role"`                   // Role of the sender (e.g., "assistant").
+	Content    string     `json:"content"`                // Message content.
+	Images     []string   `json:"images,omitempty"`       // Optional: Base64-encoded images (for multimodal models).
+	ToolCalls  []ToolCall `json:"tool_calls,omitempty"`   // Optional: Tool calls made by the model.
+	ToolCallID string     `json:"tool_call_id,omitempty"` // Optional: ID of the tool call.
 }
 
 // ChatRequest is used to engage in a chat conversation with a model.
 type ChatRequest struct {
-	Model     string    `json:"model"`                // Required: Name of the model to use.
-	Messages  []Message `json:"messages"`             // Required: Chat history messages.
-	Tools     []Tool    `json:"tools,omitempty"`      // Optional: Available tools.
-	Format    string    `json:"format,omitempty"`     // Optional: Response format.
-	Options   Options   `json:"options,omitempty"`    // Optional: Additional options.
-	Stream    bool      `json:"stream,omitempty"`     // Optional: Whether to stream responses.
-	KeepAlive string    `json:"keep_alive,omitempty"` // Optional: Duration to keep model in memory.
+	Model      string    `json:"model"`                 // Required: Name of the model to use.
+	Messages   []Message `json:"messages"`              // Required: Chat history messages.
+	Tools      []Tool    `json:"tools,omitempty"`       // Optional: Available tools.
+	ToolChoice string    `json:"tool_choice,omitempty"` // Optional: How the model should use tools.
+	Format     string    `json:"format,omitempty"`      // Optional: Response format.
+	Options    Options   `json:"options,omitempty"`     // Optional: Additional options.
+	Stream     bool      `json:"stream,omitempty"`      // Optional: Whether to stream responses.
+	KeepAlive  string    `json:"keep_alive,omitempty"`  // Optional: Duration to keep model in memory.
 }
 
 // =========================
