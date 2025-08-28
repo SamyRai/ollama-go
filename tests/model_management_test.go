@@ -1,6 +1,7 @@
 package tests
 
 import (
+	"encoding/json"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -8,12 +9,18 @@ import (
 	"github.com/SamyRai/ollama-go/client"
 	"github.com/SamyRai/ollama-go/config"
 	"github.com/SamyRai/ollama-go/structures"
+	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
 
 // TestCreateModel validates model creation.
 func TestCreateModel(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		require.Equal(t, http.MethodPost, r.Method)
+		var reqBody structures.ModelManagementRequest
+		err := json.NewDecoder(r.Body).Decode(&reqBody)
+		require.NoError(t, err)
+		assert.Equal(t, "test-model", reqBody.Name)
 		w.WriteHeader(http.StatusOK)
 	}))
 	defer server.Close()
@@ -27,6 +34,11 @@ func TestCreateModel(t *testing.T) {
 // TestDeleteModel validates model deletion.
 func TestDeleteModel(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		require.Equal(t, http.MethodDelete, r.Method)
+		var reqBody map[string]string
+		err := json.NewDecoder(r.Body).Decode(&reqBody)
+		require.NoError(t, err)
+		assert.Equal(t, "test-model", reqBody["name"])
 		w.WriteHeader(http.StatusOK)
 	}))
 	defer server.Close()
@@ -52,6 +64,12 @@ func TestDeleteModelFailure(t *testing.T) {
 // TestCopyModel validates model copying.
 func TestCopyModel(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		require.Equal(t, http.MethodPost, r.Method)
+		var reqBody map[string]string
+		err := json.NewDecoder(r.Body).Decode(&reqBody)
+		require.NoError(t, err)
+		assert.Equal(t, "test-model", reqBody["source"])
+		assert.Equal(t, "test-model-copy", reqBody["destination"])
 		w.WriteHeader(http.StatusOK)
 	}))
 	defer server.Close()
@@ -77,6 +95,11 @@ func TestCopyModelFailure(t *testing.T) {
 // TestPullModel validates pulling a model from a remote source.
 func TestPullModel(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		require.Equal(t, http.MethodPost, r.Method)
+		var reqBody map[string]string
+		err := json.NewDecoder(r.Body).Decode(&reqBody)
+		require.NoError(t, err)
+		assert.Equal(t, "test-model", reqBody["name"])
 		w.WriteHeader(http.StatusOK)
 	}))
 	defer server.Close()
@@ -89,6 +112,11 @@ func TestPullModel(t *testing.T) {
 // TestPushModel validates pushing a model to a remote source.
 func TestPushModel(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		require.Equal(t, http.MethodPost, r.Method)
+		var reqBody map[string]string
+		err := json.NewDecoder(r.Body).Decode(&reqBody)
+		require.NoError(t, err)
+		assert.Equal(t, "test-model", reqBody["name"])
 		w.WriteHeader(http.StatusOK)
 	}))
 	defer server.Close()

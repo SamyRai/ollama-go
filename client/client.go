@@ -11,12 +11,14 @@ import (
 )
 
 // OllamaClient provides a structured API client for communicating with the Ollama API.
+// It handles the construction of HTTP requests and the parsing of responses.
 type OllamaClient struct {
-	BaseURL    string
-	HTTPClient *http.Client
+	BaseURL    string       // The base URL of the Ollama API (e.g., "http://localhost:11434").
+	HTTPClient *http.Client // The HTTP client to use for making requests.
 }
 
-// NewClient initializes a new Ollama API client with default settings.
+// NewClient initializes a new Ollama API client with the provided configuration.
+// It returns a pointer to a new OllamaClient.
 func NewClient(cfg *config.Config) *OllamaClient {
 	return &OllamaClient{
 		BaseURL: cfg.BaseURL,
@@ -26,7 +28,9 @@ func NewClient(cfg *config.Config) *OllamaClient {
 	}
 }
 
-// Request handles normal HTTP requests (non-streaming).
+// Request sends a standard, non-streaming HTTP request to the Ollama API.
+// It marshals the request body to JSON, sends the request, and decodes the JSON response.
+// If the response has a status code of 400 or greater, it returns an error.
 func (c *OllamaClient) Request(method, endpoint string, body interface{}, response interface{}) error {
 	url := c.BaseURL + endpoint
 
@@ -65,7 +69,9 @@ func (c *OllamaClient) Request(method, endpoint string, body interface{}, respon
 	return nil
 }
 
-// StreamRequest handles streaming HTTP responses.
+// StreamRequest sends a streaming HTTP request to the Ollama API.
+// It processes the response as a stream of JSON objects, calling the provided
+// callback function for each object.
 func (c *OllamaClient) StreamRequest(method, endpoint string, body interface{}, callback func(json.RawMessage)) error {
 	url := c.BaseURL + endpoint
 
