@@ -1,0 +1,12 @@
+- request:
+    method: POST
+    url: https://ollama.com/api/chat
+    headers:
+      Authorization: Bearer test-api-key
+    body: '{"model":"llama3","messages":[{"role":"user","content":"What is AI?"}]}'
+  response:
+    status: 200 OK
+    headers:
+      Content-Type:
+      - application/json
+    body: '{"message":{"role":"assistant","content":"Artificial intelligence (AI) is a wide-ranging branch of computer science concerned with building smart machines capable of performing tasks that typically require human intelligence."}}'
