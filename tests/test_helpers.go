@@ -9,7 +9,7 @@ import (
 	"github.com/SamyRai/ollama-go/internal/client"
 	"github.com/SamyRai/ollama-go/internal/config"
 	"github.com/stretchr/testify/require"
-	"gopkg.in/dnaeon/go-vcr.v2/recorder"
+	"gopkg.in/dnaeon/go-vcr.v4/pkg/recorder"
 )
 
 // SetupVCRTest creates a properly configured VCR recorder and client for testing.
@@ -30,8 +30,16 @@ func SetupVCRTest(t *testing.T, fixtureName string) (*client.OllamaClient, *reco
 	rec, err := recorder.New(fixturePath)
 	require.NoError(t, err)
 
+	t.Cleanup(func() {
+		err := rec.Stop()
+		if err != nil {
+			t.Logf("Failed to stop recorder: %v", err)
+		}
+	})
+
 	// Log the fixture path for debugging purposes
 	t.Logf("Loading VCR fixtures from: %s", fixturePath)
+	t.Logf("VCR_MODE: %s", os.Getenv("VCR_MODE"))
 
 	// Create and configure the client to use the recorder
 	cli := client.NewClient(config.DefaultConfig())

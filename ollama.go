@@ -69,6 +69,13 @@ func (c *Client) WithDebugMode(debug bool) *Client {
 	return c
 }
 
+// WithCloud configures the client to use the Ollama cloud service.
+func (c *Client) WithCloud() *Client {
+	c.config.BaseURL = "https://ollama.com/api"
+	c.client = client.NewClient(c.config)
+	return c
+}
+
 // SetLogLevel sets the logging level for the client.
 // Valid levels are: "NONE", "ERROR", "WARN", "INFO", "DEBUG"
 func SetLogLevel(level string) {
