@@ -3,7 +3,7 @@ module github.com/SamyRai/ollama-go
 go 1.25
 
 require (
-	github.com/stretchr/testify v1.10.0
+	github.com/stretchr/testify v1.11.1
 	gopkg.in/dnaeon/go-vcr.v2 v2.3.0
 )
 
